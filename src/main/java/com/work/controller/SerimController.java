@@ -12,4 +12,8 @@ public class SerimController {
 	public String serim() {
 		return "rerim";
 	}
+	
+	public String serim2() {
+		return "rerim2";
+	}
 }
