@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 @Controller
 public class GeonController {
            
-	@GetMapping("/test/kyung")
+	@GetMapping("/test/kyung3")
 	@ResponseBody
 	public String test() {
 		return "test";   
@@ -15,7 +15,7 @@ public class GeonController {
 	
 	//test test
 	
-	@GetMapping("/test/kyung2")
+	@GetMapping("/test/kyung4")
 	@ResponseBody
 	public String test2() {
 		return "test2";   
