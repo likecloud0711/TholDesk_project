@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>spring 시작!!</title>
+<title>spring 시작!!!</title>
 </head>
  <body>
   ${hello}
