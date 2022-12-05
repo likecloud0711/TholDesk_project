@@ -20,4 +20,11 @@ public class KyungController {
 	public String test2() {
 		return "test2";   
 	}
+	
+	@GetMapping("/test/kyungseok")
+	@ResponseBody
+	public String kyung() {
+		return "seok";   
+	}
+	
 }
