@@ -14,4 +14,10 @@ public class KyungController {
 	}
 	
 	//test test
+	
+	@GetMapping("/test/kyung2")
+	@ResponseBody
+	public String test2() {
+		return "test2";   
+	}
 }
