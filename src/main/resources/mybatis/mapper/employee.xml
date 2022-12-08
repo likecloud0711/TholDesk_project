@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.work.employee.EmployeeDao">
+
+<insert id="empInsert">
+	insert into employee(empno, empnm, email, tel, pwd, adminyn, joindt, grade, teamno) values(#{empno}, #{empnm}, #{email}, #{tel}, #{pwd}, #{adminyn}, #{joindt}, #{grade}, #{teamno})
+</insert>
+
+</mapper>

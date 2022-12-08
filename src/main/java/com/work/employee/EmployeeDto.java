@@ -1,0 +1,92 @@
+package com.work.employee;
+
+import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
+
+@Data @Getter @Setter
+public class EmployeeDto {
+	private int empno;
+	private String empnm;
+	private String email;
+	private String tel;
+	private String pwd;
+	private String adminyn;
+	private String joindt;
+	private String grade;
+	private int teamno;
+	
+	
+	public String getEmpnm() {
+		String empnm = this.empnm;	
+		return empnm;
+	}
+	public void setEmpnm(String empnm) {
+		this.empnm = empnm;
+	}
+	
+	public String getEmail() {
+		String email = this.email;	
+		return email;
+	}
+	public void setEmail(String email) {
+		this.email = email;
+	}
+	
+	public String getTel() {
+		String tel = this.tel;	
+		return tel;
+	}
+	public void setTel(String tel) {
+		this.tel = tel;
+	}
+	
+	public String getPwd() {
+		String pwd = this.pwd;	
+		return pwd;
+	}
+	public void setPwd(String pwd) {
+		this.pwd = pwd;
+	}
+	
+	public String getAdminyn() {
+		String adminyn = this.adminyn;	
+		return adminyn;
+	}
+	public void setAdminyn(String adminyn) {
+		this.adminyn = adminyn;
+	}
+	
+	public String getJoindt() {
+		String joindt = this.joindt;	
+		return joindt;
+	}
+	public void setJoindt(String joindt) {
+		this.joindt = joindt;
+	}
+	
+	public String getGrade() {
+		String grade = this.grade;	
+		return grade;
+	}
+	public void setGrade(String grade) {
+		this.grade = grade;
+	}
+	
+	public int getTeamno() {
+		int teamno = this.teamno;	
+		return teamno;
+	}
+	public void setTeamno(int teamno) {
+		this.teamno = teamno;
+	}
+	
+	public int getEmpno() {
+		int empno = this.empno;	
+		return empno;
+	}
+	public void setEmpno(int empno) {
+		this.empno = empno;
+	}
+	
+}
