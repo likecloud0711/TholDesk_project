@@ -14,7 +14,7 @@ public class EmployeeDto {
 	private String adminyn;
 	private String joindt;
 	private String grade;
-	private int teamno;
+	private String teamno;
 	
 	
 	public String getEmpnm() {
@@ -73,11 +73,11 @@ public class EmployeeDto {
 		this.grade = grade;
 	}
 	
-	public int getTeamno() {
-		int teamno = this.teamno;	
+	public String getTeamno() {
+		String teamno = this.teamno;	
 		return teamno;
 	}
-	public void setTeamno(int teamno) {
+	public void setTeamno(String teamno) {
 		this.teamno = teamno;
 	}
 	

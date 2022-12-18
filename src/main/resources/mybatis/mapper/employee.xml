@@ -8,4 +8,22 @@
 	insert into employee(empno, empnm, email, tel, pwd, adminyn, joindt, grade, teamno) values(#{empno}, #{empnm}, #{email}, #{tel}, #{pwd}, #{adminyn}, #{joindt}, #{grade}, #{teamno})
 </insert>
 
+<select id="pwdCheck" resultType="int">
+	select COUNT(empno) from employee where empno=#{empno} and pwd=#{pwd}
+</select>
+
+<select id='selectEmp' resultType="com.work.employee.EmployeeDto" parameterType="int">
+	select * from employee where empno=#{empno}
+</select>
+
+<update id='updateEmp' parameterType='com.work.employee.EmployeeDto'>
+	update employee
+	set empno = #{empno}, empnm = #{empnm}, email = #{email}, tel = #{tel}, pwd = #{pwd}, adminyn = #{adminyn}, joindt=#{joindt}, grade = #{grade}, teamno = #{teamno}
+	where empno = 1234;
+</update>
+
+<delete id='deleteEmp' parameterType="int">
+	delete from employee
+	where empno = #{empno};
+</delete>
 </mapper>
