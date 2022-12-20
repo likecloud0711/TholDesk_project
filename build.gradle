@@ -32,6 +32,7 @@ dependencies {
 	implementation group: 'javax.servlet', name: 'jstl', version: '1.2'
 	// https://mvnrepository.com/artifact/org.apache.tomcat.embed/tomcat-embed-jasper
 	implementation group: 'org.apache.tomcat.embed', name: 'tomcat-embed-jasper', version: '9.0.56'
+	implementation group: 'com.google.code.gson', name: 'gson', version: '2.9.1'
 }
 
 tasks.named('test') {
