@@ -5,6 +5,7 @@
 <title>spring 시작!!!</title>
 </head>
  <body>
+  <jsp:include page="./top.jsp" flush='false' />
   ${hello}
  </body>
 </html>
