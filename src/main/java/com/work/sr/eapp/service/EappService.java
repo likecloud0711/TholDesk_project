@@ -29,7 +29,7 @@ public class EappService {
 	}
 	
 	public int insert(EappDto dto) {
-		dto.setEmpno(1234); // 이후 세션 생기면 변경해야함 
+		//dto.setEmpno(1234); // 이후 세션 생기면 변경해야함 
 		Date d = new Date();
 	    SimpleDateFormat sdf = new SimpleDateFormat("yyyy/MM/dd");
 	    dto.setDraftdt(sdf.format(d));
@@ -48,10 +48,12 @@ public class EappService {
 	}
 	
 	public EappDto listOne(int opno) {
+		
 		return dao.listOne(opno);
 	}
 	
 	public int updateEapp(EappDto dto) {
+		
 		return dao.updateEapp(dto);
 	}
 	
@@ -75,8 +77,12 @@ public class EappService {
 		return dao.reject();
 	}
 	
-	public int signdone(int opno) {
-		return dao.signdone(opno);
+	public int signdone(int opno, int opstatus) {
+		Map<String, Integer> map = new HashMap<>();
+		map.put("opno", opno);
+		map.put("opstatus", opstatus);
+		
+		return dao.signdone(map);
 	}
 	
 	public int returnsign(int opno) {
@@ -84,7 +90,9 @@ public class EappService {
 	}
 	
 	public int outbox(EappDto dto) {
-		dto.setEmpno(1234); // 이후 세션 생기면 변경 
+		Date d = new Date();
+	    SimpleDateFormat sdf = new SimpleDateFormat("yyyy/MM/dd");
+	    dto.setDraftdt(sdf.format(d));
 		return dao.outbox(dto);
 	}
 	

@@ -20,6 +20,11 @@
 				<input class="subject" id="subject" type="text" name="calname" placeholder="제목을 입력해주세요">
 			</div>
 			<div>
+				<input type="checkbox" name="teamno" value="0"/> 전체일정
+				<input type="checkbox" name="teamno" value="${teamno}" /> 부서일정 
+			</div>
+			
+			<div>
 				<h3>시작일</h3>
 			</div>
 			<div>
@@ -41,9 +46,9 @@
 				<h3>내용</h3>
 			</div>
 			<div>
-				<textarea class="memo" id="memo" name="memo" rows="5" cols="20" placeholder="100글자까지 입력 가능합니다.">
-				</textarea>
+				<textarea class="memo" id="memo" name="memo" rows="5" cols="20" placeholder="100글자까지 입력 가능합니다."></textarea>
 			</div>
+			
 			<input type="submit" id="save" value="확인">
 		</form>
 	</div>

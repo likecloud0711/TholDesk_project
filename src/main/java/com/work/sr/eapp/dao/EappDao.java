@@ -23,13 +23,13 @@ public interface EappDao {
 	@Select("select empno,empnm from employee where empno != #{empno}")
 	List<Map<String, Object>> signer2(int empno);
 	
-	@Select("select * from approval order by opno desc limit #{start}, #{count}")
+	@Select("select * from approval natural join employee natural join team order by opno desc limit #{start}, #{count}")
 	List<EappDto> list(Map<String, Object> map);
 	
 	@Select("select count(*) from approval")
 	int count();
 	
-	@Select("select * from approval where opno = #{opno}")
+	@Select("select * from approval natural join employee natural join team where opno = #{opno}")
 	EappDto listOne(int opno);
 	
 	@Update("update approval set optitle=#{optitle}, opcont=#{opcont} where opno=#{opno}")
@@ -38,20 +38,20 @@ public interface EappDao {
 	@Delete("delete from approval where opno = #{opno}")
 	int delete(int opno);
 
-	@Select("select * from approval where #{empno} in (opsign1, opsign2) and opstatus = 0")
+	@Select("select * from approval  natural join employee natural join team  where (opsign1 =#{empno} and opstatus = 0 ) or (opsign2 =#{empno} and opstatus = 1 )")
 	List<EappDto> signlist(int empno); // 결재처리 하는 페이지
 	
-	@Select("select * from approval where opstatus = 2")
+	@Select("select * from approval natural join employee natural join team where opstatus = 2")
 	List<EappDto> permission(); //승인
 	
-	@Select("select * from approval where opstatus = 1")
+	@Select("select * from approval natural join employee natural join team where opstatus = 1")
 	List<EappDto> waiting(); //대기
 
-	@Select("select * from approval where opstatus = 3")
+	@Select("select * from approval natural join employee natural join team where opstatus = 3")
 	List<EappDto> reject(); //반려
 	
-	@Update("update approval set opstatus = 2 where opno = #{opno}")
-	int signdone(int opno);
+	@Update("update approval set opstatus = #{opstatus} where opno = #{opno}")
+	int signdone(Map<String, Integer> map);
 	
 	@Update("update approval set opstatus = 3 where opno = #{opno}")
 	int returnsign(int opno);
@@ -59,7 +59,7 @@ public interface EappDao {
 	@Insert("insert into approval (approvedt, draftdt, empno, formno, opcont,  opsign1, opsign2, opstatus, optitle) values(#{approvedt}, #{draftdt}, #{empno}, #{formno}, #{opcont}, #{opsign1}, #{opsign2}, 4, #{optitle})")
 	int outbox(EappDto dto); //임시저장 버튼 기능 
 
-	@Select("select * from approval where opstatus = 4")
+	@Select("select * from approval natural join employee natural join team where opstatus = 4")
 	List<EappDto> outboxpage(); //임시저장페이지
 	
 	List<EappDto> EappSearch(Map<String, Object> m);

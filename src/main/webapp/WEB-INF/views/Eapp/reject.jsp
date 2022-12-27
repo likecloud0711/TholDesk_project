@@ -60,8 +60,8 @@ a {
 				<td>재택근무신청서</td>
 				</c:if>
 				<td><a href="rejectpage/${re.opno}">${re.optitle }</a></td>
-				<td>${re.empno }</td>
-				<td>기안부서</td>
+				<td>${re.empnm } ${re.grade }</td>
+				<td>${re.teamnm }</td>
 				<td>${re.draftdt }</td>
 			
 			</tr>

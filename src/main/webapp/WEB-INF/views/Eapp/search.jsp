@@ -54,7 +54,7 @@ a {
 			<c:forEach items="${esList }" var="es">
 			<tr>
 			<td><a href="content/${es.opno }">${es.optitle }</a></td>
-			<td>${es.empno }</td>
+			<td>${es.empnm }</td>
 			<td>${es.draftdt }</td>
 			<td>${es.opcont }</td>
 			</tr>

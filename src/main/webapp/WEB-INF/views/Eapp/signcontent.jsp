@@ -31,14 +31,20 @@
 				<td>재택근무신청서</td>
 				</c:if>
 				<td>${dto.optitle }</td>
-				<td>${dto.empno }</td>
-				<td>기안부서</td>
+				<td>${dto.empnm } ${dto.grade }</td>
+				<td>${dto.teamnm }</td>
 				<td>${dto.draftdt }</td>
 				<td>${dto.opcont }</td>
 			</tr>
 </table>
 <form method="get" id="signdone1" action="/Eapp/returncontent">
 <input type="hidden" name="opno" value="${dto.opno}">
+<c:if test="${dto.opsign1 == empno }">
+<input type="hidden" name="opstatus" value="1">
+</c:if>
+<c:if test="${dto.opsign2 == empno }">
+<input type="hidden" name="opstatus" value="2">
+</c:if>
 <input type="button" id="signdone2" value="승인">
 <input type="button" onclick="location.href='/Eapp/rejectcont/${dto.opno}'" id="returnsign2" value="반려">
 </form>
@@ -46,6 +52,8 @@
 <script>
 	$(document).ready(function(){
 		$("#signdone2").click(function(){
+			
+			
 			$("#signdone1").attr("action", "/Eapp/signcontent");
 			$("#signdone1").submit();
 		})

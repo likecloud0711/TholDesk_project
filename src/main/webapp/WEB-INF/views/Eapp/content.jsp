@@ -59,8 +59,8 @@ a {
 				<td>재택근무신청서</td>
 				</c:if>
 				<td>${dto.optitle }</td>
-				<td>${dto.empno }</td>
-				<td>기안부서</td>
+				<td>${dto.empnm } ${dto.grade }</td>
+				<td>${dto.teamnm }</td>
 				<td>${dto.draftdt }</td>
 				<c:if test="${dto.opstatus == 0}">
 				<td>제출</td>
@@ -77,9 +77,11 @@ a {
 				<td>${dto.opcont }</td>
 			</tr>
 </table>
-<a href="/Eapp/update/${dto.opno }">수정</a>
 <a href="../eapproval">목록</a>
+<c:if test="${empno == dto.empno }">
+<a href="/Eapp/update/${dto.opno }">수정</a>
 <a href="../eapproval" id="delete" >삭제</a>
+</c:if>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script>
 	$(function(){

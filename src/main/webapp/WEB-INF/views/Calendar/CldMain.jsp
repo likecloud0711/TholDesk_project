@@ -10,13 +10,18 @@
 <script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.11.2/main.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.11.2/locales-all.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
 <title>캘린더 메인</title>
 </head>
 <body>
 
 <div id='calendar'></div>
 <button class="add-button" type="button" onclick="click_add();">일정추가</button>
+<a href="/logout"><button>로그아웃</button></a>
 
+<input type=button id="teamSch" value="부서일정" onclick="location.href='/Calendar/TeamSch/${teamno}'">
+<a href="/Calendar/CldMain"><button>전체일정</button></a>
+<div>로그인부서 : ${teamno }</div>
 <script>
 document.addEventListener('DOMContentLoaded', function() {
 	var calendarEl = document.getElementById('calendar');
@@ -43,13 +48,92 @@ document.addEventListener('DOMContentLoaded', function() {
                title : '${vo.calname}',
                 start : '${vo.stdt}',
                 end : '${vo.eddt}',
-                color : '#' + Math.round(Math.random() * 0xffffff).toString(16)
+                color : '#' + Math.round(Math.random() * 0xffffff).toString(16),
+                groupId : '${vo.teamno}',
+                id : '${vo.calno}'
              },
    			</c:forEach>
 		</c:if>
 		],
-		nowIndicator: true, // 현재 시간 마크
+		eventClick : function(info){ //삭제나 만들어부리자 
+			
+			function leftPad(value) {
+			    if (value >= 10) {
+			        return value;
+			    }
+			    return '0' + value;
+			}
+			
+			function toStringByFormatting(source, delimiter = '-') {
+			    const year = source.getFullYear();
+			    const month = leftPad(source.getMonth() + 1);
+			    const day = leftPad(source.getDate());    
+
+			    return [year, month, day].join(delimiter);
+			}   
+			
+			if(info.event.groupId == ${teamno}){
+				
+			if(confirm(info.event.title +' - 삭제 하시겠습니까?')){
+				$.ajax({
+					type:"delete",
+					url: "/Calendar/CalDelte",
+					data: {
+						'calname' : info.event.title,
+						'stdt' : toStringByFormatting(info.event.start)
+					},
+					success: function(response){
+						window.location.reload()
+					}
+				})
+			}
+			}else{alert("삭제 권한이 없습니다.")}
+		}
+		, nowIndicator: true, // 현재 시간 마크
 		locale: 'ko' // 한국어 설정
+		, eventDrop : function(info){
+			
+			function leftPad(value) {
+			    if (value >= 10) {
+			        return value;
+			    }
+			    return '0' + value;
+			}
+			
+			function toStringByFormatting(source, delimiter = '-') {
+			    const year = source.getFullYear();
+			    const month = leftPad(source.getMonth() + 1);
+			    const day = leftPad(source.getDate());    
+
+			    return [year, month, day].join(delimiter);
+			}   
+			
+			
+			console.log(info.event.end)
+			if(confirm("수정하시겠습니까?")){ 
+				$.ajax({
+					type: "post",
+					url:"/Calendar/updateSch/",
+					data: {
+						'calno' : info.event.id,
+						'stdt' : toStringByFormatting(info.event.start),
+						'eddt' : toStringByFormatting(info.event.end)
+					}
+				}).done(function(response){
+				window.location.reload()
+				})
+			}else{
+				info.revert();
+			}
+		},
+		/* eventResize : function(info){
+			if(confirm("수정하시겠습니까?")){
+				var mag = updateFunc(info);
+				alert(msg);
+			}else{
+				info.revert();
+			}
+		} */
 	});
 	calendar.render();
 });
@@ -60,27 +144,21 @@ document.addEventListener('DOMContentLoaded', function() {
 		var option = "width = 600, height = 600, left = 100, top = 50, location=no";
 		window.open(url, name, option)
 	};
-	
-	$(function(){
-		$.datepicker.setDefaults({
-			dateFormat : 'yy-mm-dd',
-			showOtherMonths : true,
-			showMonthAfterYear : true,
-			changeYear : true,
-			changeMonth : true,
-		yearSuffic : "년",
-		monthNamesShort : ['1','2','3','4','5','6','7','8','9','10','11','12'],
-		monthNames : ['1월','2월','3월','4월','5월','6월','7월','8월','9월','10월','11월','12월'],
-		dayNamesMin : ['일','월','화','수','목','금','토'],
-		dayNames : ['일요일','월요일','화요일','수요일','목요일','금요일','토요일']
-		});
-		$("#startDate").datepicker();
-		$("#endDate").datepicker();
-		
-		$("#startDate").datepicker('satDate','today');
-		$("#endDate").datepicker('satDate','today');
-		
-	})
 </script>
+<!-- <script>
+$(function(){
+	$("#teamSch").click(function(){
+		//let no = $(this).attr("#teamSch");
+		
+		$.ajax({url:"/Calendar/TeamSch",
+			data: "teamno="+${teamno}, method:"get"})
+			.done(function(){
+				window.location.reload();
+			})
+			return false;
+	}) 
+})
+</script>
+ -->
 </body>
 </html>

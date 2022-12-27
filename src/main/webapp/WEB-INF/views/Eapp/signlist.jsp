@@ -60,8 +60,8 @@ a {
 				<td>재택근무신청서</td>
 				</c:if>
 				<td><a href="signcontent/${sl.opno}">${sl.optitle }</a></td>
-				<td>${sl.empno }</td>
-				<td>기안부서</td>
+				<td>${sl.empnm } ${sl.grade }</td>
+				<td>${sl.teamnm }</td>
 				<td>${sl.draftdt }</td>
 			</tr>
 		</c:forEach>

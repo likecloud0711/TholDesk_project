@@ -33,8 +33,8 @@
 				<td>재택근무신청서</td>
 				</c:if>
 				<td>${dto.optitle }</td>
-				<td>${dto.empno }</td>
-				<td>기안부서</td>
+				<td>${dto.empnm } ${dto.grade }</td>
+				<td>${dto.teamnm }</td>
 				<td>${dto.draftdt }</td>
 				<c:if test="${dto.opstatus == 0}">
 				<td>제출</td>

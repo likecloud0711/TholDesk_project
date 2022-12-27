@@ -21,7 +21,7 @@ public class EmployeeDto {
 		String empnm = this.empnm;	
 		return empnm;
 	}
-	public void setEmpnm(String empnm) {
+	public void setEmpnm(String empnm) {  
 		this.empnm = empnm;
 	}
 	

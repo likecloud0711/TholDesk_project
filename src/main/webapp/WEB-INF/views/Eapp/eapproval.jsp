@@ -35,7 +35,7 @@ a {
 </style>
 </head>
 <body>
-<h1>Thol desk 전자결재</h1><br>
+<h1>Thol desk 전자결재</h1>
 <div>
 <a href="/Eapp/signlist">결재처리목록</a>
 <a href="/Eapp/permission">승인문서</a>
@@ -55,6 +55,7 @@ a {
 <input type="submit" value="검색">
 </form>
 <a href="/Eapp/write">작성</a>
+<a href="/logout"><button>로그아웃</button></a>
 </div>
 <div>
 	<table>
@@ -82,8 +83,8 @@ a {
 				<td>재택근무신청서</td>
 				</c:if>
 				<td><a href="content/${appo.opno}">${appo.optitle }</a></td>
-				<td>${appo.empno }</td>
-				<td>기안부서</td>
+				<td>${appo.empnm } ${appo.grade }</td>
+				<td>${appo.teamnm }</td>
 				<td>${appo.draftdt }</td>
 				<c:if test="${appo.opstatus == 0}">
 				<td>제출</td>

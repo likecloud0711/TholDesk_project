@@ -9,6 +9,7 @@
 <body>
 <script>
 alert("일정이 등록되었습니다.");
+opener.location.reload();
 self.close();
 
 </script>

@@ -15,4 +15,7 @@ public class EappDto {
 	private String optitle; // 전자결재 제목
 	private int opstatus; //결재상태 (0 제출, 1 대기, 2승인, 3반려)
 	private String reject; // 반려사유 기입
+	private String empnm;
+	private String grade;
+	private String teamnm;
 }

@@ -61,8 +61,8 @@ a {
 				<td>재택근무신청서</td>
 				</c:if>
 				<td><a href="content/${ob.opno}">${ob.optitle }</a></td>
-				<td>${ob.empno }</td>
-				<td>기안부서</td>
+				<td>${ob.empnm } ${ob.grade }</td>
+				<td>${ob.teamnm }</td>
 				<td>${ob.draftdt }</td>
 			
 			</tr>
