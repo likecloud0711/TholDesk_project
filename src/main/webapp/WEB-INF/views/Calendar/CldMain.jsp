@@ -14,7 +14,6 @@
 <title>캘린더 메인</title>
 </head>
 <body>
-
 <div id='calendar'></div>
 <button class="add-button" type="button" onclick="click_add();">일정추가</button>
 <a href="/logout"><button>로그아웃</button></a>
@@ -145,20 +144,6 @@ document.addEventListener('DOMContentLoaded', function() {
 		window.open(url, name, option)
 	};
 </script>
-<!-- <script>
-$(function(){
-	$("#teamSch").click(function(){
-		//let no = $(this).attr("#teamSch");
-		
-		$.ajax({url:"/Calendar/TeamSch",
-			data: "teamno="+${teamno}, method:"get"})
-			.done(function(){
-				window.location.reload();
-			})
-			return false;
-	}) 
-})
-</script>
- -->
+
 </body>
 </html>

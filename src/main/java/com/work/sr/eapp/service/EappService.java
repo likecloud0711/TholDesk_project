@@ -43,7 +43,7 @@ public class EappService {
 	public List<EappDto> list(int start){
 		Map<String, Object> m = new HashMap<String, Object>();
 		m.put("start", start);
-		m.put("count", 10);
+		m.put("count", 5);
 		return dao.list(m);
 	}
 	

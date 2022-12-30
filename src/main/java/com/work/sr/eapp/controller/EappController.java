@@ -38,7 +38,7 @@ public class EappController {
 		int count = service.count();
 		
 		if(count > 0) {
-			int perPage = 10;
+			int perPage = 5;
 			int startRow = (page -1) * perPage;
 	
 		List<EappDto> list = service.list(startRow);

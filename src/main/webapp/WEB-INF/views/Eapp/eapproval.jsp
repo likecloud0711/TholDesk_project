@@ -7,42 +7,20 @@
 <head>
 <meta charset="UTF-8">
 <title>전자결재 화면</title>
-<style>
-#center {
-	width: 700px;
-	margin-left: auto;
-	margin-right: auto;
-}
-
-table {
-	border: 1px solid black;
-	width: 700px;
-	border-collapse: collapse;
-}
-
-th {border: 1px solid black;
-	background-color: orange;
-	width: 150px;
-}
-td{border: 1px solid black;}
-a {
-	margin: 10px auto;
-}
-
-#page {
-	text-align: left;
-}
-</style>
 </head>
 <body>
+<div><jsp:include page="../top.jsp" flush='false' /></div>
 <h1>Thol desk 전자결재</h1>
-<div>
-<a href="/Eapp/signlist">결재처리목록</a>
-<a href="/Eapp/permission">승인문서</a>
-<a href="/Eapp/waiting">대기문서</a>
-<a href="/Eapp/reject">반려문서</a>
-<a href="/Eapp/outboxpage">임시보관함</a>
-</div>
+  
+<nav>
+	<ul>
+		<li><a href="/Eapp/signlist">결재처리목록</a></li>
+		<li><a href="/Eapp/permission">승인문서</a></li>
+		<li><a href="/Eapp/waiting">대기문서</a></li>
+		<li><a href="/Eapp/reject">반려문서</a></li>
+		<li><a href="/Eapp/outboxpage">임시보관함</a></li>
+	</ul>
+</nav>
 <h3>문서함</h3>
 <div class="search"> <!-- 검색기능 -->
 <form action="search">
@@ -117,8 +95,6 @@ a {
 			</c:if>
 			
 	</div>
-
-</div>			
-
+</div>		
 </body>
 </html>

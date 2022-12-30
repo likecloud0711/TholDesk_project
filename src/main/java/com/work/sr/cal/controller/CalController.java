@@ -85,8 +85,8 @@ public class CalController {
 	@PostMapping("/Calendar/updateSch")
 	@ResponseBody
 		public String updateSch(CalDto dto) {
-		System.out.println(dto.getCalno());
-		service.updateSch(dto);
+		System.out.println(dto.getCalno());   
+		service.updateSch(dto);    
 		return "redirect:/Calendar/CldMain";
 	}
 		
