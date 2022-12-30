@@ -20,6 +20,7 @@
           
           <A href="./Calendar/CldMain">cal</A>
           <a href="./Eapp/eapproval">전자결재</a>
+          <a href="./chat.html">채팅</a>
     </NAV>
   </DIV>
   
