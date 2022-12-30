@@ -163,7 +163,7 @@ public class EmployeeController {
 		ModelAndView mav = new ModelAndView();
 		session.invalidate(); // 모든 session 변수 삭제
 		
-		mav.setViewName("redirect:/hello"); 
+		mav.setViewName("redirect:/loginView"); 
 		
 		return mav;
 	}
