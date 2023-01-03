@@ -9,5 +9,5 @@ public class CommDto {
 	private String replycont;
 	private String replydate;
 	private int boardno;
-
+	private String empnm;
 }

@@ -7,7 +7,7 @@ pageEncoding="UTF-8"%>
 
 <div class="row" style="margin-bottom:20px; margin-left:1px;">
 <div class="col-lg-12">
-<h1 class="page-header">작성 페이지</h1>
+<h1 class="page-header">공지사항 작성 페이지</h1>
 </div>
 </div>
 
@@ -34,16 +34,22 @@ pageEncoding="UTF-8"%>
 		</tr>
 		<tr>
 			<th class="active" >작성자</th>
-			<td class="form-inline"><input type="text" id="empno"
-				name="empno" class="form-control" style="width: 200px" value="${dto.empno }"/>
+			<td class="form-inline"><input type="text" id="empnm"
+				name="empnm" class="form-control" style="width: 200px" value="${dto.empnm }"/>
 			</td>
 		</tr>
 		<tr>
 			<th class="active" >내용</th>
 			<td class="form-inline"><textarea 
-					id="boardcontents" name="boardcontents" cols="100" rows="10"
-					class="form-control">${dto.boardcontents }</textarea></td>
+				id="boardcontents" name="boardcontents" cols="100" rows="10"
+				class="form-control">${dto.boardcontents }</textarea></td>
 		</tr>
+		<tr>	
+			<th class="active">첨부파일</th>
+			<td class="form-inline">
+				<input type="file" value="upload">
+		</tr>
+
 	</tbody>
 </table>
 </div>

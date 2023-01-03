@@ -15,7 +15,7 @@ pageEncoding="UTF-8"%>
 <div id="contAreaBox">
 <div class="panel">
 <div class="panel-body">
-<form role="form" action="/ks/write" method="post" onsubmit="return _onSubmit();">
+<form role="form" action="/ks/write" method="post" onsubmit="return _onSubmit();" enctype="multipart/form-data">
 <div class="table-responsive" style="text-align:center;">
 	<table id="datatable-scroller"
 		class="table table-bordered tbl_Form">
@@ -27,10 +27,10 @@ pageEncoding="UTF-8"%>
 		<tbody>
 			<tr>
 				<th class="active" >작성자</th>
-				<td class="form-inline"><input type="text" id="empno" 
-				name="empno" class="form-control" style="width: 200px" />
+				<td class="form-inline"><input type="text" id="empnm" 
+				name="empnm" class="form-control" style="width: 200px" value="${dto.empnm}" readonly/>
 				<input type="hidden" name="announceyn" value="N"/>
-				
+				<input type="hidden" name="empno" value="${dto.empno}"/>
 				<!-- <td><input class="txt w100" name="id" value="${user.id}" /></td> --> 
 				</td>
 			</tr>
@@ -51,14 +51,16 @@ pageEncoding="UTF-8"%>
 		</tbody>
 								<tr>
 				<th class="active">첨부파일</th>
-				<td class="form-inline"><input type="text" id="board_title"
-					name="boardtitle" class="form-control" style="width: 840px" />
+				<td class="form-inline">
+				<input type="file" name="file" value="upload">
 				</td>
 			</tr>
 	</table>
 </div>
 <div align="center">
-	<button type="submit" class="btn btn-warning">등록</button>
+
+	<button style="margin-right: 0.5em; text-align: right; height: 40px;"
+					class="btn btn-primary" type="submit">등록</button>
 	<a href="/ks/board" class="btn btn-warning">취소</a>
 </div>
 </form>

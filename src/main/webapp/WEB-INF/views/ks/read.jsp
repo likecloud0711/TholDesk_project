@@ -16,13 +16,11 @@ if(!confirm("삭제 하시겠습니까?")){
 
 </script>
 
-
 <%@include file="../includes/header.jsp"%>
-
 
 <div class="row" style="margin-bottom:20px; margin-left:1px;">
 <div class="col-lg-12">
-<h1 class="page-header">상세 페이지</h1>
+<h1 class="page-header">공지사항 상세 페이지</h1>
 </div>
 </div>
 
@@ -43,7 +41,7 @@ if(!confirm("삭제 하시겠습니까?")){
 		<tr>
 			<th class="active" >작성자</th>
 			<td>
-			${dto.empno}
+			${dto.empnm}
 			</td>
 		</tr>
 		<tr>
@@ -58,17 +56,22 @@ if(!confirm("삭제 하시겠습니까?")){
 			${dto.boardcontents}
 			</td>
 		</tr>
+		<tr>
+			<th class="active" >첨부파일</th>
+			<td>
+			<a href="/download/${dto.boardno}">${dto.originalname}</a>
+			</td>
+		</tr>
 	</tbody>
 </table>
 </div>
 
-
 <div style="margin-left:1px;" align="center">
 <a href="/ks/board" class="btn btn-primary">목록</a>
+<c:if test="${dto.empnm == dto1.empnm }">
 <a href="/ks/update/${dto.boardno}" class="btn btn-success">수정</a>
 <button type="button" class="btn btn-danger" onclick="deleteConfirm();">삭제</button>
-
-
+</c:if>
 </div>
 </form>
 </div>
@@ -76,9 +79,5 @@ if(!confirm("삭제 하시겠습니까?")){
 </div>
 </div>
 
-
 <%@include file="comment.jsp" %>
 <%@include file="../includes/footer.jsp"%>
-
-
-
