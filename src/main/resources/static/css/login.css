@@ -1,0 +1,249 @@
+@charset "UTF-8";
+
+.material-symbols-outlined {
+  font-variation-settings:
+  'FILL' 0,
+  'wght' 700,
+  'GRAD' 0,
+  'opsz' 48
+}
+.login_background{
+/* 로그인화면 */
+
+
+position: relative;
+width: 1440px;
+height: 1024px;
+
+background: linear-gradient(142.81deg, #4254F9 12.75%, rgba(98, 125, 166, 0.24) 86.16%);
+backdrop-filter: blur(2px);
+/* Note: backdrop-filter has minimal browser support */
+	
+}
+
+.logo{
+	/* Thol Desk */
+
+
+position: absolute;
+width: 200px;
+height: 48px;
+left: 646px;
+top: 70px;
+
+font-family: 'Inter';
+font-style: italic;
+font-weight: 900;
+font-size: 40px;
+line-height: 48px;
+
+color: #000000;
+	
+}
+.carbs{
+/* Carbs */
+
+
+position: absolute;
+width: 80px;
+height: 80px;
+left: 566px;
+top: 51px;
+}
+/* Vector 129 */
+
+.carbs1{
+position: absolute;
+left: 50%;
+right: 50%;
+top: 62.5%;
+bottom: 6.25%;
+
+/* Line_icon */
+
+border: 2px solid #CCD2E3;
+}
+/* Vector 128 */
+
+.carbs2{
+position: absolute;
+left: 15.03%;
+right: 59.97%;
+top: 37.5%;
+bottom: 12.5%;
+
+/* Line_icon */
+
+border: 2px solid #CCD2E3;
+transform: matrix(-0.5, 0.87, 0.87, 0.5, 0, 0);
+}
+
+/* Vector 128 */
+.carbs3{
+
+position: absolute;
+left: 84.97%;
+right: -9.97%;
+top: 37.5%;
+bottom: 12.5%;
+
+/* Line_icon */
+
+border: 2px solid #CCD2E3;
+transform: rotate(60deg);
+}
+/* Vector 127 */
+.carbs4{
+
+position: absolute;
+left: 37.5%;
+right: 37.5%;
+top: 8.33%;
+bottom: 41.67%;
+
+/* Line_icon */
+
+border: 2px solid #CCD2E3;
+}
+
+.rect{
+
+
+position: absolute;
+width: 700px;
+height: 500px;
+left: calc(50% - 700px/2);
+top: calc(50% - 500px/2 + 63px);
+
+background: rgba(255, 255, 255, 0.48);
+box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+border-radius: 80px;
+}
+
+.login_btn{
+
+
+position: absolute;
+width: 137px;
+height: 100px;
+left: 800px;
+top: 702px;
+
+background: #FFFFFF;
+box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+border-radius: 40px;
+}
+.login_btn2{
+	box-sizing: border-box;
+
+position: absolute;
+left: 66.67%;
+right: -16.67%;
+top: 29.17%;
+bottom: 29.17%;
+
+/* Line_icon */
+
+border: 2px solid #CCD2E3;
+transform: matrix(-1, 0, 0, 1, 0, 0);
+}
+
+.login_btn3{
+	position: absolute;
+left: 40.17%;
+right: 12.5%;
+top: 70.33%;
+bottom: 8.33%;
+
+/* Line_icon */
+
+border: 2px solid #CCD2E3;
+}
+
+.user_fill{
+	position: absolute;
+width: 60px;
+height: 60px;
+left: 476px;
+top: 443px;
+}
+
+.id_ist{
+	position: absolute;
+width: 544px;
+height: 110px;
+left: 446px;
+top: 418px;
+}
+
+.id_rect{
+	position: absolute;
+width: 540px;
+height: 100px;
+left: -370px;
+top: -350px;
+
+background: #FFFFFF;
+}
+
+.id_loc{
+	position: absolute;
+width: 544px;
+height: 110px;
+left: 446px;
+top: 418px;
+	
+}
+.pwd_loc{
+	position: absolute;
+width: 544px;
+height: 110px;
+left: 446px;
+top: 550px;
+	
+}
+
+.save1{
+		position: absolute;
+width: 200px;
+height: 100px;
+left: 625px;
+top: 110px;
+}
+.save2{
+		position: absolute;
+width: 200px;
+height: 100px;
+left: 625px;
+top: 240px;
+}
+
+.login_prf{
+	box-sizing: border-box;
+
+/* Subtract */
+
+
+position: absolute;
+width: 166.67px;
+height: 166.67px;
+left: 642px;
+top: 200px;
+
+/* fill_icon */
+
+background: #FFFFFF;
+
+/* fill_icon */
+
+border: 1px solid #FFFFFF;
+filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+border-radius: 56px;
+}
+.thol_desk{
+	position: absolute;
+width: 500px;
+height: 100px;
+/* left: 650px;*/
+top: 80px;
+}
