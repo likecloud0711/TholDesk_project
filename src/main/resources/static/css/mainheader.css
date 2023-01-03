@@ -1,0 +1,61 @@
+@charset "UTF-8";
+ #topmenu {          
+                        height: 30px; 
+                        width: 100%; 
+                }
+                #topmenu ul {
+                	list-style-type: none; 
+                	margin: 0px;
+                	padding: 0px; 
+                }
+                
+                #topmenu ul li {     
+                        color: white;               
+                        background-color: #2d2d2d; 
+                        float: left;               
+                        line-height: 30px;          
+                        vertical-align: middle;    
+                        text-align: center;
+                        position: relative; 
+                        width:20%;         
+                }
+                .menuLink, .submenu {
+	                	text-decoration:none;
+	                	display: block; 
+	                	width: 150px; 
+	                	font-size: 12px;
+	                	font-weight: bold;
+	                	font-family: "Trebuchet MS", Dotum;  
+                }
+                .menuLink {
+                		color: white;
+                }
+                .topmenuLi:hover .menuLink {
+                		color: red;
+                		background-color: #4d4d4d;
+                }
+                .submenu {
+                		color: #2d2d2d;
+                		background-color:  white;
+                		border: solid 1px black;
+                		margin-top: -1px;
+                }
+                .longLink {
+                		width: 190px;
+                }
+                .sub {
+                		position: absolute;
+                		height: 0px; 
+                		overflow: hidden; 
+                		transition: height .2s;
+                		-webkit-transition: height .2s;
+                		-moz-transition: height .2s;
+                		-o-transition: height .2s;
+                }
+                .topmenuLi:hover .sub {
+                		height: 93px;
+                }
+                .submenu:hover {
+                		color: black;
+                		background-color:#dddddd;
+                }
