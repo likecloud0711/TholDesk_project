@@ -10,14 +10,14 @@
 	<form method="post" id="update" action="/Eapp/update">
 	<input type="hidden" name="_method" value="put">
 	<input type="hidden" name="opno" value="${dto.opno }">
-	<table>
+	<table border="1">
 	<tr>
 	<td>제목</td>
 	<td><input name="optitle" value="${dto.optitle }"/></td>
 	</tr>
 	<tr>
 	<td>내용</td>
-	<td><textarea name="opcont" cols="40" rows="10">${dto.opcont }</textarea></td>
+	<td><textarea name="opcont" cols="100" rows="80">${dto.opcont }</textarea></td>
 	</tr>
 	</table>
 	</form>

@@ -35,6 +35,7 @@ a {
 }
 </style>
 <body>
+<div><jsp:include page="../top.jsp" flush='false' /></div>
 <h3>반려 내용</h3>
 <table>
 			<tr>

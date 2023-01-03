@@ -6,6 +6,8 @@
 <html>
 <head>
 <meta charset="UTF-8">
+<!-- CSS only -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fullcalendar@5.11.2/main.css">
 <script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.11.2/main.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
@@ -14,6 +16,7 @@
 <title>캘린더 메인</title>
 </head>
 <body>
+<%@include file="/WEB-INF/include/header.jsp"%>
 <div id='calendar'></div>
 <button class="add-button" type="button" onclick="click_add();">일정추가</button>
 <a href="/logout"><button>로그아웃</button></a>
@@ -144,6 +147,7 @@ document.addEventListener('DOMContentLoaded', function() {
 		window.open(url, name, option)
 	};
 </script>
-
+<!-- JavaScript Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
 </body>
 </html>

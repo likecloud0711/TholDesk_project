@@ -117,4 +117,12 @@ public class EappService {
 	public int rejectcont(EappDto dto){
 		return dao.rejectcont(dto); //반려사유 기입 페이지
 	}
+	
+	public String opsign1(int opno) {
+		return dao.opsign1(opno);
+	}
+	
+	public String opsign2(int opno) {
+		return dao.opsign2(opno);
+	}
 }

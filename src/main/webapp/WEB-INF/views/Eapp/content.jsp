@@ -86,14 +86,19 @@ a {
 <script>
 	$(function(){
 		$("a[id]").click(function(){
-			let no = $(this).attr("id");
+			var act = confirm("삭제하시겠습니까?");
+			if(act){let no = $(this).attr("id");
 			
 			$.ajax({url:"/Eapp/delete",
 				data: "opno="+${dto.opno}, method:"delete"})
 				.done(function(){
 					location.href="/Eapp/eapproval";
 				})
-				return false;
+				return false;}
+			else{
+				
+			}
+			
 		}) 
 	})
 </script>

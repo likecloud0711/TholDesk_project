@@ -42,7 +42,6 @@ public class EappController {
 			int startRow = (page -1) * perPage;
 	
 		List<EappDto> list = service.list(startRow);
-		System.out.println(list.size());
 		m.addAttribute("list",list);
 		/*int empno = (int) session.getAttribute("empno");
 		
@@ -63,7 +62,6 @@ public class EappController {
 		m.addAttribute("end",end);
 		m.addAttribute("pageNum", pageNum);
 		m.addAttribute("totalPages", totalPages);
-		System.out.println("end:"+end);
 	}
 	m.addAttribute("count",count);
 		
@@ -101,21 +99,38 @@ public class EappController {
 		List<Map<String, Object>> elist2 = service.signer2(empno);
 		Gson gson = new Gson() ;
 		String text = gson.toJson(elist2);
-		System.out.println(text);
 		return text;	
 	}
 	
-	@GetMapping("/Eapp/content/{opno}")
+	@GetMapping("/Eapp/content/{opno}") //상세보기 페이지 
 	public String content(@PathVariable int opno, Model m) {
 		EappDto dto = service.listOne(opno);
+
+
 		m.addAttribute("dto", dto);
+
+		String signer1 = service.opsign1(opno);
+		m.addAttribute("signer1",signer1);
+
+		String signer2 = service.opsign2(opno);
+		m.addAttribute("signer2",signer2);
 		
+	int formno = dto.getFormno();
+	if(formno == 1) {
+		return "/Eapp/cont_1";
+	}
+	if(formno == 2) {
+		return "/Eapp/cont_2";
+	}
+	if(formno == 3) {
+		return "/Eapp/cont_3";
+	}
 
 		return "/Eapp/content";
 		
 	}
 	
-	@GetMapping("/Eapp/update/{opno}")
+	@GetMapping("/Eapp/update/{opno}") //수정페이지 뷰
 	public String updateEapp(@PathVariable int opno, Model m, HttpSession session) {
 		EappDto dto = service.listOne(opno);
 		m.addAttribute("dto", dto);
@@ -126,7 +141,7 @@ public class EappController {
 		return "/Eapp/update";
 	}
 	
-	@PutMapping("/Eapp/update")
+	@PutMapping("/Eapp/update") // 수정페이지 값
 	public String update(EappDto dto, HttpSession session) {
 		service.updateEapp(dto);
 		
@@ -136,7 +151,7 @@ public class EappController {
 		return "redirect:eapproval";
 	}
 	
-	@DeleteMapping("/Eapp/delete")
+	@DeleteMapping("/Eapp/delete") //문서 삭제
 	@ResponseBody
 	public String delete(int opno, HttpSession session) {
 		int i = service.delete(opno);
@@ -145,7 +160,7 @@ public class EappController {
 		return ""+i;
 	}
 	
-	@GetMapping("/Eapp/signlist")
+	@GetMapping("/Eapp/signlist") //결재처리 해야할 목록 
 	public String signlist(Model m, HttpSession session) {
 		int empno = (int) session.getAttribute("empno");
 		
@@ -162,6 +177,25 @@ public class EappController {
 		
 		int empno = (int) session.getAttribute("empno");
 		dto.setEmpno(empno);
+		
+		String signer1 = service.opsign1(opno);
+		m.addAttribute("signer1",signer1);
+
+		String signer2 = service.opsign2(opno);
+		m.addAttribute("signer2",signer2);
+		
+		
+		int formno = dto.getFormno();
+		if(formno == 1) {
+			return "/Eapp/signcont_1";
+		}
+		if(formno == 2) {
+			return "/Eapp/signcont_2";
+		}
+		if(formno == 3) {
+			return "/Eapp/signcont_3";
+		}
+		
 		
 		return "/Eapp/signcontent";
 		
@@ -187,14 +221,14 @@ public class EappController {
 		return "redirect:eapproval";
 	}
 	
-	@GetMapping("/Eapp/returncontent")
+	@GetMapping("/Eapp/returncontent") 
 	public String returnsign(int opno, HttpSession session) { //반려처리
 		service.returnsign(opno);
 		session.getAttribute("empno");
 		return "redirect:eapproval";
 	}
 	
-	@GetMapping("/Eapp/permission")
+	@GetMapping("/Eapp/permission") //승인 된 결재 목록
 	public String permission(Model m, HttpSession session) {
 		List<EappDto> pmlist = service.permission();
 		m.addAttribute("pmlist", pmlist );
@@ -206,7 +240,7 @@ public class EappController {
 		return "/Eapp/permission";
 	}
 	
-	@GetMapping("/Eapp/waiting")
+	@GetMapping("/Eapp/waiting") // 대기 상태인 문서 목록
 	public String waiting(Model m, HttpSession session) {
 		List<EappDto> wlist = service.waiting();
 		m.addAttribute("wlist", wlist );
@@ -216,7 +250,7 @@ public class EappController {
 		return "/Eapp/waiting";
 	}
 	
-	@GetMapping("/Eapp/reject")
+	@GetMapping("/Eapp/reject") // 반려 상태인 문서 목록
 	public String reject(Model m, HttpSession session) {
 		List<EappDto> relist = service.reject();
 		m.addAttribute("relist", relist );
@@ -226,7 +260,7 @@ public class EappController {
 		return "/Eapp/reject";
 	}
 	
-	@GetMapping("/Eapp/outboxpage")
+	@GetMapping("/Eapp/outboxpage") // 임시보관함
 	public String outboxpage(Model m, HttpSession session) {
 		List<EappDto> oblist = service.outboxpage();
 		m.addAttribute("oblist", oblist);
@@ -235,7 +269,7 @@ public class EappController {
 		return "/Eapp/outboxpage";
 	}
 	
-	@GetMapping("/Eapp/search")
+	@GetMapping("/Eapp/search") 
 	public String search(int searchn, String search, @RequestParam(name="p", defaultValue = "1") int page, Model m) {
 		int count = service.countSearch(searchn, search);
 		if(count > 0) {
@@ -267,7 +301,7 @@ public class EappController {
 			return "/Eapp/search";
 	}
 	
-	@GetMapping("/Eapp/rejectcont/{opno}")
+	@GetMapping("/Eapp/rejectcont/{opno}") //반려 상세 보기
 	public String rejectcont(@PathVariable int opno, Model m, HttpSession session) {
 		service.returnsign(opno);
 		EappDto dto = service.listOne(opno);
@@ -277,7 +311,7 @@ public class EappController {
 		
 		return "/Eapp/rejectcont";
 	}
-	@PostMapping("/Eapp/rejectcont")
+	@PostMapping("/Eapp/rejectcont") // 반려 상세보기에서 수정
 	public String rejectcont(EappDto dto, HttpSession session) {
 		service.rejectcont(dto);
 		
