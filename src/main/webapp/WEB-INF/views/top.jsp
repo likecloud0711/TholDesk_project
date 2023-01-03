@@ -18,6 +18,9 @@
       
       <A class='menu_link'  href='/insert'>직원 등록</A><span class='top_menu_sep'> </span>
           
+          <A href="./Calendar/CldMain">cal</A>
+          <a href="./Eapp/eapproval">전자결재</a>
+          <a href="./chat.html">채팅</a>
     </NAV>
   </DIV>
   

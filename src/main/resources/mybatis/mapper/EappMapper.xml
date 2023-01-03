@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.work.sr.eapp.dao.EappDao">
+<select id="EappSearch" parameterType="map" resultType="com.work.sr.eapp.dto.EappDto">
+		select * from approval natural join employee natural join team
+		<where>
+			<choose>
+				<when test="searchn == 0">
+				optitle like
+				concat('%',#{search},'%')</when>
+				<when test="searchn == 1"> opcont like concat('%',#{search},'%')</when>
+				<when test="searchn == 2"> empnm like concat('%',#{search}, '%')</when>
+			</choose>
+		</where>
+		order by opno desc limit #{start}, #{count}
+	</select>
+<select id="countSearch" resultType="int" parameterType="map">
+	select count(*) from approval natural join employee natural join team
+	<where>
+	<choose> <!-- 다중 조건 걸어서 처리 -->
+		<when test="searchn == 0">
+		optitle like concat('%', #{search},'%')
+		</when>
+		<when test="searchn == 1"> opcont like concat('%',#{search},'%')</when>
+		<when test="searchn == 2"> empnm like concat('%',#{search},'%')</when>
+	</choose>
+	</where>
+	</select>
+
+</mapper>
