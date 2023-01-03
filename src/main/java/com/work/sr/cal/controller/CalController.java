@@ -89,7 +89,10 @@ public class CalController {
 		service.updateSch(dto);    
 		return "redirect:/Calendar/CldMain";
 	}
-		
+	@GetMapping("/Calendar/miniCal")
+	public String mini() {
+		return "/Calendar/miniCal";
+	}	
 }
 
 
