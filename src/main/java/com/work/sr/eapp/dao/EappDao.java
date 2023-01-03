@@ -67,4 +67,10 @@ public interface EappDao {
 	
 	@Update("update approval set reject = #{reject} where opno = #{opno}")
 	int rejectcont(EappDto dto); //반려사유 기입 페이지
+	
+	@Select("select empnm from employee where empno = (select opsign1 from approval where opno = #{opno})")
+	String opsign1(int opno); //결재자1 구하기
+	
+	@Select("select empnm from employee where empno = (select opsign2 from approval where opno = #{opno})")
+	String opsign2(int opno); //결재자1 구하기
 }

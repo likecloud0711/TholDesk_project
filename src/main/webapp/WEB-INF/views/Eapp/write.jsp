@@ -32,6 +32,7 @@
 		<td>결재자 확인</td>
 		<td>
 		<select name='opsign1' id="sign1">
+		<option>--결재자1--</option>
 		<c:forEach items="${elist}" var="signer1">
 			<option value="${signer1.empno}">${signer1.empnm }</option>
 		</c:forEach>
