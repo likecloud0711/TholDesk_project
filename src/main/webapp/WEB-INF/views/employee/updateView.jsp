@@ -8,6 +8,12 @@
 <title>employee</title>
 </head>
  <body>
+ <%@include file="../includes/header.jsp"%>
+ <span style="margin-left: 565px;">
+</span><br><br>
+<i style="font-size: 50px; margin-left: 3%;">직원정보수정</i>
+<br>
+<div style="margin-left: 3%;">
  <form name='frm' method='POST' action='/updateEmp' class="form-horizontal">
 <div class="form-group">
       <label for="empno" class="col-md-2 control-label" style='font-size: 0.9em;'>아이디*</label>    
@@ -78,8 +84,9 @@
     </form>
     <form name='form' method='POST' action='/deleteEmp?empno=${empDto.empno}' class="form-horizontal">
      <button type='submit' class='btn_delete'>삭제</button>
+     <button type="button" onclick="location.href='loginView'">뒤로가기</button>
     </form>
-   
+  </div>
     
 
  </body>

@@ -18,8 +18,8 @@
 </head>
 <body>
 <div class="login_background">
-<span style="margin-left: 550px;">
-<img alt="Carbs" src="./img/Carbs.png" style="margin-top: 80px;">
+<span style="margin-left: 565px;">
+<img alt="Carbs" src="./img/Vector.png" style="margin-top: 80px;">
 <i class="thol_desk" style="font-size:60px;">Tholdesk</i>
 </span>
 <div class="login_prf">

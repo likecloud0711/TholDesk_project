@@ -1,0 +1,12 @@
+@charset "UTF-8";
+
+.cal_box{
+	position: relative;
+/* width: 1440px;
+height: 1024px; */
+width: 1440px;
+height: 1024px;
+
+left:15%;
+top:15%;
+}
