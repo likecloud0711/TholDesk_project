@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.work.vacation.VacationDao">
+<insert id="insertVac" >
+	insert into vacation(empno, signer1, signer2, status, vacno, vacdate, vacend, vacstart, vacstatus, vacleft)
+	values(#{empno}, #{signer1}, #{signer2}, #{status}, #{vacno}, #{vacdate}, #{vacend}, #{vacstart}, #{vacstatus}, #{vacleft});
+	
+</insert>
+
+<select id="selectVac" resultType="com.work.vacation.VacationDto" parameterType="int">
+	select * from vacation where empno=#{empno}
+</select>
+
+<select id="selectsgn" resultType="com.work.vacation.VacationDto" parameterType="int">
+	select * from vacation where (signer1=#{empno} or signer2=#{empno}) and (vacstatus=1 or vacstatus=2)
+</select>
+
+<select id="vacationDetail" resultType="com.work.vacation.VacationDto" parameterType="int">
+	select * from vacation where vacno=#{vacno}
+</select>
+
+<update id='injectVac' parameterType='int'>
+	update vacation
+	set vacstatus = 2
+	where vacno = #{vacno};
+</update>
+
+<update id='approveVac' parameterType='int'>
+	update vacation
+	set vacstatus = 3
+	where vacno = #{vacno};
+</update>
+
+</mapper>

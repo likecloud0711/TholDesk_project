@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.work.work.WorkDao">
+<insert id="insertWork">
+	insert into work(status, empno) values(2, #{empno});
+</insert>
+
+<update id="updateEnd">
+	update work set status = 3 where empno = #{empno} and status = 2
+</update>
+
+</mapper>
