@@ -104,7 +104,7 @@ public class EappService {
 		m.put("searchn", searchn);
 		m.put("search", search);
 		m.put("start", start);
-		m.put("count", 10);
+		m.put("count", 5);
 		return dao.EappSearch(m);
 	}
 	public int countSearch(int searchn, String search) {
