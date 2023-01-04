@@ -2,20 +2,39 @@
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<%@include file="/WEB-INF/views/includes/header.jsp"%>
 <!DOCTYPE html>
 <html>
 <head>
 <link rel="stylesheet" href="/css/mainheader.css"/>
 <meta charset="UTF-8">
 <title>hello TDworks</title>
+<style>
+table {
+	border: 1px solid black;
+	width: 700px;
+	border-collapse: collapse;
+}
 
+th {border: 1px solid black;
+	text-align: center;
+	background-color: navy;
+	width: 150px;
+	color: white;
+}
+td{border: 1px solid black;
+	background-color: white;
+}
+
+
+</style>
 </head>
 <body>
 
       
       <!-- 전자결재 -->
-      <div style="display:flex">
-     <div class="eapp" align="center" style="box-shadow: 2px 2px 2px;">   
+      <div>
+     <div class="eapp">   
      <h4>전자결재</h4>
 	<table>
 			<tr>

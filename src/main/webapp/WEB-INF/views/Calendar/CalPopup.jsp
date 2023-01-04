@@ -20,7 +20,7 @@
 				<input class="subject" id="subject" type="text" name="calname" placeholder="제목을 입력해주세요">
 			</div>
 			<div>
-				<input type="checkbox" name="teamno" value="0"/> 전체일정
+				<input type="checkbox" name="teamno" value="10"/> 전체일정
 				<input type="checkbox" name="teamno" value="${teamno}" /> 부서일정 
 			</div>
 			

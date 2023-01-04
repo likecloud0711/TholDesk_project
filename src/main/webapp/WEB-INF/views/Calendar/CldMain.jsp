@@ -2,10 +2,16 @@
     pageEncoding="UTF-8"%>
 <%@page import="java.util.List"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>    
+<%@include file="/WEB-INF/views/includes/header.jsp"%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
+<style>
+button {width: 10%;}
+#teamSch {width: 10%;}
+
+</style>
 <!-- CSS only -->
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fullcalendar@5.11.2/main.css">
@@ -16,13 +22,12 @@
 <title>캘린더 메인</title>
 </head>
 <body>
-<%@include file="/WEB-INF/include/header.jsp"%>
 <div id='calendar'></div>
 <button class="add-button" type="button" onclick="click_add();">일정추가</button>
-<a href="/logout"><button>로그아웃</button></a>
+<a href="/logout"><button id="teamSch">로그아웃</button></a>
 
 <input type=button id="teamSch" value="부서일정" onclick="location.href='/Calendar/TeamSch/${teamno}'">
-<a href="/Calendar/CldMain"><button>전체일정</button></a>
+<a href="/Calendar/CldMain"><button id="teamSch">전체일정</button></a>
 <div>로그인부서 : ${teamno }</div>
 <script>
 document.addEventListener('DOMContentLoaded', function() {

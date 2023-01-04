@@ -12,7 +12,7 @@ import com.work.sr.cal.dto.CalDto;
 
 @Mapper
 public interface CalDao {
-	@Select("select * from calendar natural join team where teamno in (0, #{teamno})") //전체 일정
+	@Select("select * from calendar natural join team where teamno in (10, #{teamno})") //전체 일정
 	List<CalDto> All(String teamno);
 	
 	@Insert("insert into calendar (calno, stdt, eddt, calname, place, memo, teamno) values(#{calno}, #{stdt}, #{eddt}, #{calname}, #{place}, #{memo}, #{teamno})")
