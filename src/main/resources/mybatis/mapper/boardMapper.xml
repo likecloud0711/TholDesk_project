@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
@@ -67,4 +68,75 @@
 </select>
 
 
+=======
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+ <mapper namespace="com.work.ks.board.dao.BoardDao"> 
+<!-- 공지사항 -->
+	<select id="countSearch" resultType="int" parameterType="int">
+		select count(*) from board natural join employee
+		<where>
+				boardtitle like concat('%',#{search}, '%')
+				or boardcontents like concat('%',#{search}, '%') 
+				or empno like concat('%',#{search}, '%') 
+		</where> 
+	</select>  
+
+<select id="boardListSearch" parameterType="map" resultType ="com.work.ks.board.dto.BoardDto">
+	select * from board natural join employee
+	<where>
+			boardtitle like concat('%',#{search}, '%')
+			or boardcontents like concat('%',#{search}, '%')
+			or empno like concat('%',#{search}, '%') 
+	</where>
+		order by boarddate desc limit #{start}, #{count}
+</select>
+<!-- 부서게시판 -->
+	<select id="teamcountSearch" resultType="int" parameterType="int">
+		select count(*) from teamboard natural join employee 
+		<where> teamno = #{teamno}
+			and (
+				boardtitle like concat('%',#{search}, '%')
+				or boardcontents like concat('%',#{search}, '%') 
+				or empno like concat('%',#{search}, '%')
+				)
+		</where> 
+	</select>  
+
+<select id="teamboardListSearch" parameterType="map" resultType ="com.work.ks.board.dto.BoardDto">
+	select * from teamboard natural join employee
+	<where> teamno = #{teamno}
+			and (
+				boardtitle like concat('%',#{search}, '%')
+				or boardcontents like concat('%',#{search}, '%') 
+				or empno like concat('%',#{search}, '%')
+				)
+		</where> 
+		order by boarddate desc limit #{start}, #{count}
+</select>
+<!-- 자유게시판 -->
+	<select id="freecountSearch" resultType="int" parameterType="int">
+		select count(*) from freeboard natural join employee
+		<where>
+				boardtitle like concat('%',#{search}, '%')
+				or boardcontents like concat('%',#{search}, '%') 
+				or empno like concat('%',#{search}, '%') 
+		</where> 
+	</select>  
+
+<select id="freeboardListSearch" parameterType="map" resultType ="com.work.ks.board.dto.BoardDto">
+	select * from freeboard natural join employee
+	<where>
+			boardtitle like concat('%',#{search}, '%')
+			or boardcontents like concat('%',#{search}, '%')
+			or empno like concat('%',#{search}, '%') 
+	</where>
+		order by boarddate desc limit #{start}, #{count}
+</select>
+
+
+>>>>>>> refs/remotes/origin/serim
 </mapper>
