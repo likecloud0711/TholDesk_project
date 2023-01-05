@@ -1,6 +1,7 @@
 package com.work.employee;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import org.apache.ibatis.annotations.Mapper;
@@ -20,4 +21,10 @@ public interface EmployeeDao {
 	public int updateEmp(EmployeeDto empDto);
 	
 	public int deleteEmp(int empno);
+	
+	public List<EmployeeDto> selectAllEmp();
+	
+	public List<EmployeeDto> selectBossEmp(int empno);
+	
+	public String selectName(int empno);
 }
