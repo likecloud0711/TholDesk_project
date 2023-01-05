@@ -69,6 +69,7 @@
 				</c:forEach>
 			</tbody>
 		</table>
+		<c:if test="${count == 0}"> 검색 조건에 맞는 글이 없습니다. </c:if>
 	</div>
 	<div style="overflow: hidden;">
 		<div>

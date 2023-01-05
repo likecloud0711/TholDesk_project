@@ -152,7 +152,7 @@ public class BoardController {
 		} 
 		
 		//글 수정 기능2
-		@PostMapping("/ks/update")
+		@PostMapping("/ks/update")   
 		public String update2(BoardDto dto) {
 			service.update(dto);
 			return "redirect:board";

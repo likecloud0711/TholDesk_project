@@ -2,10 +2,10 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
-<%@include file="../includes/header.jsp"%>
+<%@ include file="../includes/header.jsp"%>
 
 <head>
-<title>title</title>
+<title>공지사항</title>
 <!-- Bootstrap cdn 설정 -->
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 <!-- 페이징 기능 꾸미기 -->
@@ -16,12 +16,11 @@
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 
 </head>
-
 	<!-- Begin Page Content -->
 	<div class="container-fluid">
-	
 		<!-- Page Heading -->
 		<h1 class="h3 mb-2 font-weight-bold text-gray-800">공지사항</h1>
+		
 		<!-- DataTales Example -->
 		<div class="card shadow mb-4">
 			<div class="card-header py-3">
@@ -35,11 +34,10 @@
 					placeholder="검색어를 입력하세요." /> <input type="submit" class="btn btn-primary" value="검색">
 			</form>		
 			</div>
-
 <!-- 검색[e] -->
 <div class="card-body">
 	<div class="table-responsive">
-		<table class="table table-bordered" width="100%" cellspacing="0">
+		<table class="table table-bordered" >
 			<thead>
 				<tr>
 					<th class="text-center" width="100">글번호</th>
@@ -117,4 +115,6 @@
 </div>
 </div>
 <!-- /.container-fluid -->
+
+<%@include file="../includes/footer.jsp"%>
 

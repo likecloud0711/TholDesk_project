@@ -11,4 +11,11 @@
 	update work set status = 3 where empno = #{empno} and status = 2
 </update>
 
+<select id="selectWork" resultType="com.work.work.WorkDto" parameterType="int">
+	select * from work where (DATE_FORMAT(gowork, "%Y-%m-%d") = CURDATE()) and empno=#{empno} and (status=2 or status=3);
+</select>
+
+<select id="selectWorklist" resultType="com.work.work.WorkDto" parameterType="int" >
+	select * from work where empno = #{empno}
+</select>
 </mapper>

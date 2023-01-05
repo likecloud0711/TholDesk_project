@@ -7,7 +7,7 @@ pageEncoding="UTF-8"%>
 
 <div class="row" style="margin-bottom:20px; margin-left:1px;">
 <div class="col-lg-12">
-<h1 class="page-header">작성 페이지</h1>
+<h1 class="page-header mb-2 font-weight-bold text-gray-800" style="color:#212121; margin-top:20px;">작성 페이지</h1>
 </div>
 </div>
 
@@ -26,7 +26,7 @@ pageEncoding="UTF-8"%>
 		</colgroup>
 		<tbody>
 			<tr>
-				<th class="active" >작성자</th>
+				<th class="active" style="color:#212121;">작성자</th>
 				<td class="form-inline"><input type="text" id="empnm" 
 				name="empnm" class="form-control" style="width: 200px" value="${dto.empnm}" readonly/>
 				<input type="hidden" name="announceyn" value="N"/>
@@ -35,7 +35,7 @@ pageEncoding="UTF-8"%>
 				</td>
 			</tr>
 			<tr>
-				<th class="active">제목</th>
+				<th class="active" style="color:#212121;">제목</th>
 				<td class="form-inline">
 				<input type="text" id="boardtitle"
 					name="boardtitle" class="form-control" style="width: 840px" />
@@ -43,14 +43,14 @@ pageEncoding="UTF-8"%>
 			</tr>
 
 			<tr>
-				<th class="active" >내용</th>
+				<th class="active" style="color:#212121;">내용</th>
 				<td class="form-inline"><textarea 
 						id="boardcontents" name="boardcontents" cols="100" rows="10"
 						class="form-control"></textarea></td>
 			</tr>
 		</tbody>
 								<tr>
-				<th class="active">첨부파일</th>
+				<th class="active" style="color:#212121;">첨부파일</th>
 				<td class="form-inline">
 				<input type="file" name="file" value="upload">
 				</td>

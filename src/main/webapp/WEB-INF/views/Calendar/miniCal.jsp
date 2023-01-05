@@ -81,7 +81,8 @@ function nextCalendar(){
 }
 </script>
 <body>
-	<table id="calendar" align="center">
+	<!-- <table id="calendar" align="center"> -->
+	<table id="calendar">
 		<tr>
 			<td align="center"><label onclick="prevCalendar()"> ◀ </label></td>
 			<td colspan="5" align="center" id="calendarTitle">yyyy년 m월</td>

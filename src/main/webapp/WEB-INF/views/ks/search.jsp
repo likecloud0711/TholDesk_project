@@ -32,12 +32,12 @@
 			<form method="get" id="listForm" action="/ks/search">
 				<input type="text" id="search" name="search"
 					value="${dto.search}" style="width: 300px; height: 40px;"
-					placeholder="검색어를 입력하세요." /> 
+					placeholder="검색어를 입력하세요." />
 					<input type="submit" class="btn btn-primary" value="검색">
 			</form>		
 			</div>
+			
 <!-- 검색[e] -->
-
 <div class="card-body">
 	<div class="table-responsive">
 		<table class="table table-bordered" width="100%" cellspacing="0">
@@ -51,6 +51,7 @@
 				</tr>
 			</thead>
 			<tbody>
+			
 				<c:forEach items="${blist}" var="dto">
 					<tr>
 						<td class="text-center hidden-sm hidden-xs">
@@ -67,8 +68,10 @@
 						<c:out value="${dto.readcount}" /></td>
 					</tr>
 				</c:forEach>
+			
 			</tbody>
 		</table>
+		<c:if test="${count == 0}"> 검색 조건에 맞는 글이 없습니다. </c:if>
 	</div>
 	<div style="overflow: hidden;">
 		<div>
@@ -105,3 +108,4 @@
 </div>
 <!-- /.container-fluid -->
 
+<%@include file="../includes/footer.jsp"%>
