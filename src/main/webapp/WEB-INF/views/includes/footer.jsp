@@ -8,7 +8,8 @@
             <footer class="sticky-footer bg-white">
                 <div class="container my-auto">
                     <div class="copyright text-center my-auto">
-                        <span>Copyright &copy; Your Website 2020</span>
+                        <p>솔데스크</p>
+                        <span>서울특별시 종로구 종로12길 15, 2층/5층/8~10층(관철동 13-13) 대표전화 : 1544-0714</span>
                     </div>
                 </div>
             </footer>
