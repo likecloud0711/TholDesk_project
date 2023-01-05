@@ -10,7 +10,7 @@
       
       <c:choose>
         <c:when test="${sessionScope.empno != null}"> <%-- 로그인 한 경우 --%>
-           ${sessionScope.empname }  
+           ${sessionScope.empnm}  
            <c:if test="${sessionScope.grade eq 100 }">사장</c:if>
            <c:if test="${sessionScope.grade eq 20 }">부장</c:if>
            <c:if test="${sessionScope.grade eq 30 }">과장</c:if>
