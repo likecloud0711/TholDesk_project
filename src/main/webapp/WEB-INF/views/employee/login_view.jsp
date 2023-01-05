@@ -12,33 +12,45 @@
 
 </head>
 <body>
-<jsp:include page="../top.jsp" flush='false' />
-<form name='frm' method='POST' action='/pwdChk'>
-<div >
-      <label for="empno"style='font-size: 0.9em;'>아이디</label>    
-      <div class="col-md-10">
-        <input type='text'name='empno' id='empno' value='${ck_id }' required="required" style='width: 30%;' placeholder="아이디" autofocus="autofocus">
-          <Label>   
-            <input type='checkbox' name='id_save' value='Y' 
+
+<div class="login_background">
+<span style="margin-left: 565px;">
+<img alt="Carbs" src="./img/Vector.png" style="margin-top: 80px;">
+<i class="thol_desk" style="font-size:60px;">Tholdesk</i>
+</span>
+<div class="login_prf">
+		<span class="material-symbols-outlined" style="font-size: 150px; margin-left: 7.5px">
+person
+</span>
+</div>
+<%-- <jsp:include page="../top.jsp" flush='false' /> --%>
+
+<div class="rect">
+<form name='frm' method='POST' action='/pwdChk' class="form-horizontal">
+
+<div class="id_loc">
+<!-- 건희 -->
+<input type='text' class="id_rect" style="font-size: 15pt; border:0 solid black;" name='empno' id='empno' value='${ck_id }' 
+required="required" placeholder="사원번호를 입력하세요" autofocus="autofocus">
+</div>
+
+<!-- 저장버튼ID -->
+<Label class="save1">
+<input type='checkbox' name='id_save' value='Y' 
                       ${ck_id_save == 'Y' ? "checked='checked'" : "" }> 저장
-          </Label>  
-      </div>
-    </div>   
-                
-    
-    <div>
-      <label for="pwd"style='font-size: 0.9em;'>비밀번호</label>    
-      <div class="col-md-10">
-        <input type='password'name='pwd' id='pwd' 
-                   value='${ck_passwd }' required="required" style='width: 30%;' placeholder="비밀번호">
-     <Label>
-            <input type='checkbox' name='passwd_save' value='Y' 
-                      ${ck_passwd_save == 'Y' ? "checked='checked'" : "" }> 저장
-          </Label>
-      </div>
-    </div> 
-     <button type="submit" class="btn" id="btn_check">로그인</button>
-     </form>
+</Label>
+
+<div class="pwd_loc">
+<!-- 건희 -->
+<input type='password' class="id_rect" style="font-size: 15pt; border:0 solid black;" name='pwd' id='pwd' value='${ck_passwd }' 
+required="required" placeholder="비밀번호를 입력하세요">
+</div>
+<!-- 저장버튼PWD -->
+<Label class="save2">
+<input type='checkbox' name='id_save' value='Y' 
+                      ${ck_id_save == 'Y' ? "checked='checked'" : "" }>저장
+</Label>
+
 </body>
 
 </html>
