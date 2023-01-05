@@ -20,7 +20,7 @@ public interface EappDao {
 	@Select("select empno,empnm from employee")
 	List<Map<String, Object>> signer(); //필요한 레코드가 두개니까 dto나 map으로 받아와야함. 
 
-	@Select("select empno,empnm from employee where empno != #{empno}")
+	@Select("select empno, empnm from employee where empno != #{empno}")
 	List<Map<String, Object>> signer2(int empno);
 	
 	@Select("select * from approval natural join employee natural join team order by opno desc limit #{start}, #{count}")
@@ -67,4 +67,10 @@ public interface EappDao {
 	
 	@Update("update approval set reject = #{reject} where opno = #{opno}")
 	int rejectcont(EappDto dto); //반려사유 기입 페이지
+	
+	@Select("select empnm from employee where empno = (select opsign1 from approval where opno = #{opno})")
+	String opsign1(int opno); //결재자1 구하기
+	
+	@Select("select empnm from employee where empno = (select opsign2 from approval where opno = #{opno})")
+	String opsign2(int opno); //결재자1 구하기
 }

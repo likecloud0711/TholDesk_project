@@ -1,12 +1,14 @@
 package com.work.gh.chat.model;
 
+import java.util.Date;
+
 public class ChatMessage {
 	//DTO
 	
     private MessageType type; // 메시지 타입
     private String content; // 메시지
     private String sender; // 채팅을 보낸 사람
-
+    private Date date;
     public MessageType getType() {
         return type;
     }

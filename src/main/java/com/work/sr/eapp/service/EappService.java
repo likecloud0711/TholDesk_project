@@ -104,7 +104,7 @@ public class EappService {
 		m.put("searchn", searchn);
 		m.put("search", search);
 		m.put("start", start);
-		m.put("count", 10);
+		m.put("count", 5);
 		return dao.EappSearch(m);
 	}
 	public int countSearch(int searchn, String search) {
@@ -116,5 +116,13 @@ public class EappService {
 	
 	public int rejectcont(EappDto dto){
 		return dao.rejectcont(dto); //반려사유 기입 페이지
+	}
+	
+	public String opsign1(int opno) {
+		return dao.opsign1(opno);
+	}
+	
+	public String opsign2(int opno) {
+		return dao.opsign2(opno);
 	}
 }
