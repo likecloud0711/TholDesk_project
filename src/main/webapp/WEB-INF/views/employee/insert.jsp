@@ -8,12 +8,17 @@
 <title>employee</title>
 </head>
  <body>
- <jsp:include page="../top.jsp" flush='false' />
- <form name='frm' method='POST' action='/create' class="form-horizontal">
+ <%@include file="../includes/header.jsp"%>
+ <span style="margin-left: 565px;">
+</span><br><br>
+<i style="font-size: 50px; margin-left: 3%;">직원등록</i>
+<br>
+<div style="margin-left: 3%;">
+ <form name='frm' method='POST' action='/updateEmp' class="form-horizontal">
 <div class="form-group">
       <label for="empno" class="col-md-2 control-label" style='font-size: 0.9em;'>아이디*</label>    
       <div class="col-md-10">
-        <input type='text' class="form-control" name='empno' id='empno' value='' required="required" style='width: 30%;' placeholder="아이디" autofocus="autofocus">
+        <input type='text' class="form-control" name='empno' id='empno' value='${empDto.empno}' required="required" style='width: 30%;' placeholder="아이디" autofocus="autofocus">
         <SPAN id='id_span'></SPAN> <!-- ID 중복 관련 메시지 -->        
       </div>
     </div>   
@@ -23,34 +28,34 @@
       <label for="empnm" class="col-md-2 control-label" style='font-size: 0.9em;'>이름*</label>    
       <div class="col-md-10">
         <input type='text' class="form-control" name='empnm' id='empnm' 
-                   value='' required="required" style='width: 30%;' placeholder="이름">
+                   value='${empDto.empnm}' required="required" style='width: 30%;' placeholder="이름">
       </div>
     </div>   
  <div class="form-group">
       <label for="email" class="col-md-2 control-label" style='font-size: 0.9em;'>이메일</label>    
       <div class="col-md-10">
         <input type='text' class="form-control" name='email' id='email' 
-                   value='' required="required" style='width: 30%;' placeholder="이메일">
+                   value='${empDto.email}' required="required" style='width: 30%;' placeholder="이메일">
       </div>
     </div> 
     <div class="form-group">
       <label for="tel" class="col-md-2 control-label" style='font-size: 0.9em;'>전화번호*</label>    
       <div class="col-md-10">
         <input type='text' class="form-control" name='tel' id='tel' 
-                   value='' required="required" style='width: 30%;' placeholder="전화번호"> 예) 010-0000-0000
+                   value='${empDto.tel}' required="required" style='width: 30%;' placeholder="전화번호"> 예) 010-0000-0000
       </div>
     </div>  
     <div class="form-group">
       <label for="pwd" class="col-md-2 control-label" style='font-size: 0.9em;'>패스워드*</label>    
       <div class="col-md-10">
-        <input type='password' class="form-control" name='pwd' id='pwd' value='' required="required" style='width: 30%;' placeholder="패스워드">
+        <input type='password' class="form-control" name='pwd' id='pwd' value='${empDto.pwd}' required="required" style='width: 30%;' placeholder="패스워드">
       </div>
     </div>   
     <div class="form-group">
       <label for="adminyn" class="col-md-2 control-label" style='font-size: 0.9em;'>관리자</label>    
       <div class="col-md-10">
         <input type='text' class="form-control" name='adminyn' id='adminyn' 
-                   value='' required="required" style='width: 30%;' placeholder="관리자">
+                   value='${empDto.adminyn}' required="required" style='width: 30%;' placeholder="관리자">
       </div>
     </div> 
    
@@ -58,26 +63,31 @@
       <label for="joindt" class="col-md-2 control-label" style='font-size: 0.9em;'>입사일</label>    
       <div class="col-md-10">
         <input type='text' class="form-control" name='joindt' id='joindt' 
-                   value='' required="required" style='width: 30%;' placeholder="입사일">
+                   value='${empDto.joindt}' required="required" style='width: 30%;' placeholder="입사일">
       </div>
     </div> 
     <div class="form-group">
       <label for="grade" class="col-md-2 control-label" style='font-size: 0.9em;'>직급</label>    
       <div class="col-md-10">
         <input type='text' class="form-control" name='grade' id='grade' 
-                   value='' required="required" style='width: 30%;' placeholder="직급">
+                   value='${empDto.grade}' required="required" style='width: 30%;' placeholder="직급">
       </div>
     </div>    
         <div class="form-group">
       <label for="teamno" class="col-md-2 control-label" style='font-size: 0.9em;'>부서번호</label>    
       <div class="col-md-10">
         <input type='text' class="form-control" name='teamno' id='teamno' 
-                   value='' required="required" style='width: 30%;' placeholder="부서번호">
+                   value='${empDto.teamno}' required="required" style='width: 30%;' placeholder="부서번호">
       </div>
     </div> 
-     <button type="submit" class="btn">등록</button>   
+     <button type="button" class="btn">수정</button>   
     </form>
-   
+    <br>
+    <form name='form' method='POST' action='/deleteEmp?empno=${empDto.empno}' class="form-horizontal">
+     <button type='button' class='btn_delete'>삭제</button>
+     <button type="button" onclick="location.href='loginView'">뒤로가기</button>
+    </form>
+  </div>
     
 
  </body>
