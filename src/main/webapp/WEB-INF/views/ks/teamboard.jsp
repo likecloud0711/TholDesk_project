@@ -39,7 +39,7 @@
 <!-- 검색[e] -->
 <div class="card-body">
 	<div class="table-responsive">
-		<table class="table table-bordered" width="100%" cellspacing="0">
+		<table class="table table-bordered">
 			<thead>
 				<tr>
 					<th class="text-center" width="100">글번호</th>
@@ -116,4 +116,4 @@
 </div>
 </div>
 <!-- /.container-fluid -->
-
+<%@include file="../includes/footer.jsp"%>

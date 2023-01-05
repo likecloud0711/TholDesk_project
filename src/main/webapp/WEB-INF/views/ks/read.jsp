@@ -18,13 +18,15 @@ if(!confirm("삭제 하시겠습니까?")){
 
 <%@include file="../includes/header.jsp"%>
 
-<div class="row" style="margin-bottom:20px; margin-left:1px;">
+<div class="row" style="margin-bottom:20px; margin-left:1px; margin-top:20px;">
 <div class="col-lg-12">
-<h1 class="page-header">공지사항 상세 페이지</h1>
+<h1 class="page-header mb-2 font-weight-bold text-gray-800" style="color:#212121;">상세 페이지</h1>
+<h4 class="mb-2 font-weight-bold text-gray-800"style="color:#212121;">(공지사항)</h4>
 </div>
 </div>
-
-<div class="panel" style="margin-left:1px;">
+<div class="container-fluid">
+<div class="card shadow mb-4">
+<div class="panel">
 <div id="contAreaBox">
 <div class="panel">
 <div class="panel-body">
@@ -32,50 +34,48 @@ if(!confirm("삭제 하시겠습니까?")){
 <div class="table-responsive" style="text-align:center;">
 <table id="datatable-scroller"
 	class="table table-bordered tbl_Form">
-	<caption></caption>
 	<colgroup>
-		<col width="250px" />
-		<col />
+		<col width="15%"/>
+		<col width="35%"/>
+		<col width="15%"/>
+		<col width="*"/>
 	</colgroup>
 	<tbody>
 		<tr>
-			<th class="active" >작성자</th>
-			<td>
-			${dto.empnm}
-			</td>
+			<th class="active">작성자</th>
+			<td style="color:#212121;">${dto.empnm}(${dto.empno})</td>
+			<th class="active">작성일</th>
+			<td style="color:#212121;">${dto.boarddate}</td>
 		</tr>
 		<tr>
 			<th class="active">제목</th> <!-- 현재 액티브한 부분을 보여줌 -->
-			<td>
-			${dto.boardtitle}
-			</td>
+			<td style="color:#212121;">${dto.boardtitle}</td>
+			<th class="active">조회수</th>
+			<td style="color:#212121;">${dto.readcount}</td>
 		</tr>
 		<tr>
-			<th class="active" >내용</th>
-			<td>
-			${dto.boardcontents}
-			</td>
+			<th class="active">내용</th>
+			<td colspan="3" style="color:#212121;">${dto.boardcontents}</td>
 		</tr>
 		<tr>
-			<th class="active" >첨부파일</th>
-			<td>
-			<a href="/download/${dto.boardno}">${dto.originalname}</a>
-			</td>
+			<th class="active">첨부파일</th>
+			<td colspan="3"><a href="/download/${dto.boardno}">${dto.originalname}</a></td>
 		</tr>
 	</tbody>
 </table>
 </div>
-
+</form>
+</div>
+</div>
+</div>
+</div>
+</div>
 <div style="margin-left:1px;" align="center">
 <a href="/ks/board" class="btn btn-primary">목록</a>
 <c:if test="${dto.empnm == dto1.empnm }">
 <a href="/ks/update/${dto.boardno}" class="btn btn-success">수정</a>
 <button type="button" class="btn btn-danger" onclick="deleteConfirm();">삭제</button>
 </c:if>
-</div>
-</form>
-</div>
-</div>
 </div>
 </div>
 
