@@ -101,15 +101,15 @@
 		</div>
 		<!-- !페이징 부분 -->
 
-		<!-- 게시글 작성버튼 S -->
-		<div style="float: right;">
-		
-		<c:if test="${emp.adminyn == 'y'}">
-			<button style="margin-right: 0.5em; text-align: right; height: 40px;"
-			class="btn btn-primary" type="button" onclick="location.href='/ks/write'">게시글 작성</button>
-		</c:if>
-		</div>
-		<!-- 게시글 작성버튼 E -->
+	  <!-- 게시글 작성버튼 S -->
+	      <div style="float: right;">
+      
+	      <c:if test="${emp.adminyn == 'Y'}">
+	         <button style="margin-right: 0.5em; text-align: right; height: 40px;"
+	         class="btn btn-primary" type="button" onclick="location.href='/ks/write'">게시글 작성</button>
+	      </c:if>
+	      </div>
+      <!-- 게시글 작성버튼 E -->
 	</div>
 </div>
 </div>
