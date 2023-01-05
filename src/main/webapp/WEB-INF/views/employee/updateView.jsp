@@ -7,12 +7,18 @@
 <meta charset="UTF-8"> 
 <title>employee</title>
 </head>
+<style>
+input:read-only {
+    color: #808080;
+}
+</style>
  <body>
+  <jsp:include page="../top.jsp" flush='false' />
  <form name='frm' method='POST' action='/updateEmp' class="form-horizontal">
 <div class="form-group">
       <label for="empno" class="col-md-2 control-label" style='font-size: 0.9em;'>아이디*</label>    
       <div class="col-md-10">
-        <input type='text' class="form-control" name='empno' id='empno' value='${empDto.empno}' required="required" style='width: 30%;' placeholder="아이디" autofocus="autofocus">
+        <input readonly type='text' class="form-control" name='empno' id='empno' value='${empDto.empno}' required="required" style='width: 30%;' placeholder="아이디" autofocus="autofocus">
         <SPAN id='id_span'></SPAN> <!-- ID 중복 관련 메시지 -->        
       </div>
     </div>   
@@ -21,15 +27,23 @@
     <div class="form-group">
       <label for="empnm" class="col-md-2 control-label" style='font-size: 0.9em;'>이름*</label>    
       <div class="col-md-10">
-        <input type='text' class="form-control" name='empnm' id='empnm' 
+        <input readonly type='text' class="form-control" name='empnm' id='empnm' 
                    value='${empDto.empnm}' required="required" style='width: 30%;' placeholder="이름">
       </div>
     </div>   
  <div class="form-group">
       <label for="email" class="col-md-2 control-label" style='font-size: 0.9em;'>이메일</label>    
       <div class="col-md-10">
+        <c:choose>
+     	 <c:when test="${empDto.adminyn eq 'Y' or me eq 'Y' }"> 
         <input type='text' class="form-control" name='email' id='email' 
                    value='${empDto.email}' required="required" style='width: 30%;' placeholder="이메일">
+      </c:when>
+       <c:otherwise>
+         <input readonly type='text' class="form-control" name='email' id='email' 
+                   value='${empDto.email}' required="required" style='width: 30%;' placeholder="이메일">
+         </c:otherwise>
+      </c:choose>
       </div>
     </div> 
     <div class="form-group">
@@ -42,7 +56,14 @@
     <div class="form-group">
       <label for="pwd" class="col-md-2 control-label" style='font-size: 0.9em;'>패스워드*</label>    
       <div class="col-md-10">
-        <input type='password' class="form-control" name='pwd' id='pwd' value='${empDto.pwd}' required="required" style='width: 30%;' placeholder="패스워드">
+      <c:choose>
+     	 <c:when test="${empDto.adminyn eq 'Y' or me eq 'Y' }"> 
+     	  <input type='password' class="form-control" name='pwd' id='pwd' value='${empDto.pwd}' required="required" style='width: 30%;' placeholder="패스워드">
+     	 </c:when>
+     	 <c:otherwise>
+     	  <input readonly type='password' class="form-control" name='pwd' id='pwd' value='' required="required" style='width: 30%;' placeholder="패스워드">     	 
+     	 </c:otherwise>
+       </c:choose>
       </div>
     </div>   
     <div class="form-group">
@@ -54,10 +75,10 @@
     </div> 
    
     <div class="form-group">
-      <label for="joindt" class="col-md-2 control-label" style='font-size: 0.9em;'>입사일</label>    
+      <label  for="joindate" class="col-md-2 control-label" style='font-size: 0.9em;'>입사일</label>    
       <div class="col-md-10">
-        <input type='text' class="form-control" name='joindt' id='joindt' 
-                   value='${empDto.joindt}' required="required" style='width: 30%;' placeholder="입사일">
+        <input readonly type='text' class="form-control" name='joindate' id='joindate' 
+                   value='${empDto.joindate}' required="required" style='width: 30%;' placeholder="입사일">
       </div>
     </div> 
     <div class="form-group">

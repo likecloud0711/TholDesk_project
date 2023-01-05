@@ -5,7 +5,7 @@
 <mapper namespace="com.work.employee.EmployeeDao">
 
 <insert id="empInsert">
-	insert into employee(empno, empnm, email, tel, pwd, adminyn, joindt, grade, teamno) values(#{empno}, #{empnm}, #{email}, #{tel}, #{pwd}, #{adminyn}, #{joindt}, #{grade}, #{teamno})
+	insert into employee(empno, empnm, email, tel, pwd, adminyn, joindate, grade, teamno) values(#{empno}, #{empnm}, #{email}, #{tel}, #{pwd}, #{adminyn}, #{joindate}, #{grade}, #{teamno})
 </insert>
 
 <select id="pwdCheck" resultType="int">
@@ -18,12 +18,24 @@
 
 <update id='updateEmp' parameterType='com.work.employee.EmployeeDto'>
 	update employee
-	set empno = #{empno}, empnm = #{empnm}, email = #{email}, tel = #{tel}, pwd = #{pwd}, adminyn = #{adminyn}, joindt=#{joindt}, grade = #{grade}, teamno = #{teamno}
-	where empno = 1234;
+	set empno = #{empno}, empnm = #{empnm}, email = #{email}, tel = #{tel}, pwd = #{pwd}, adminyn = #{adminyn}, joindate=#{joindate}, grade = #{grade}, teamno = #{teamno}
+	where empno = #{empno};
 </update>
 
 <delete id='deleteEmp' parameterType="int">
 	delete from employee
 	where empno = #{empno};
 </delete>
+
+<select id="selectAllEmp" resultType="com.work.employee.EmployeeDto">
+	select * from employee order by empno asc
+</select>
+
+<select id="selectBossEmp" resultType="com.work.employee.EmployeeDto" parameterType="int">
+	select * from employee where grade &lt; (select grade from employee where empno = #{empno}) or grade = 100
+</select>
+
+<select id="selectName" resultType="String" parameterType="int">
+	select empnm from employee where empno = #{empno}
+</select>
 </mapper>

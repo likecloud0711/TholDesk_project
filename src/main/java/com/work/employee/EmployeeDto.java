@@ -12,16 +12,16 @@ public class EmployeeDto {
 	private String tel;
 	private String pwd;
 	private String adminyn;
-	private String joindt;
+	private String joindate;
 	private String grade;
 	private String teamno;
 	
 	
-	public String getEmpnm() {
+	public String getempnm() {
 		String empnm = this.empnm;	
 		return empnm;
 	}
-	public void setEmpnm(String empnm) {  
+	public void setempnm(String empnm) {
 		this.empnm = empnm;
 	}
 	
@@ -49,20 +49,20 @@ public class EmployeeDto {
 		this.pwd = pwd;
 	}
 	
-	public String getAdminyn() {
+	public String getadminyn() {
 		String adminyn = this.adminyn;	
 		return adminyn;
 	}
-	public void setAdminyn(String adminyn) {
+	public void setadminyn(String adminyn) {
 		this.adminyn = adminyn;
 	}
 	
-	public String getJoindt() {
-		String joindt = this.joindt;	
-		return joindt;
+	public String getJoindate() {
+		String joindate = this.joindate;	
+		return joindate;
 	}
-	public void setJoindt(String joindt) {
-		this.joindt = joindt;
+	public void setJoindate(String joindate) {
+		this.joindate = joindate;
 	}
 	
 	public String getGrade() {
