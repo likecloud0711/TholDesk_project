@@ -1,4 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
+ <%@ page language="java" contentType="text/html; charset=UTF-8"
+
 	pageEncoding="UTF-8" %>
  
  </div>
@@ -64,5 +65,4 @@
     <script src="/resources/js/demo/datatables-demo.js"></script>
 
 </body>
-
 </html>
