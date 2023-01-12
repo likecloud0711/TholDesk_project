@@ -82,4 +82,5 @@ if(!confirm("삭제 하시겠습니까?")){
 </div>
 
 <%@include file="comment.jsp" %>
+
 <%@include file="../includes/footer.jsp"%>

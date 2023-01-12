@@ -119,4 +119,3 @@
 
 <%@include file="../includes/footer.jsp"%>
 
->>>>>>> refs/remotes/origin/serim
