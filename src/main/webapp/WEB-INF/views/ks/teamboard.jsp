@@ -1,9 +1,7 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
-
-<%@include file="../includes/header.jsp"%>
+<%@ include file="../includes/header.jsp"%>
 
 <head>
 <title>title</title>
@@ -62,14 +60,12 @@
 						<a href="/ks/teamboard/${dto.boardno}"> 
 						${dto.boardtitle}</a> 
 						</c:if>
-						
 								<fmt:parseDate pattern="yyyy/MM/dd" value="${dto.boarddate}" var = "bdate"/>
 								<fmt:parseDate pattern="yyyy-MM-dd" value="${nowday}" var = "now"/>
 								<fmt:formatDate  pattern="dd" value="${bdate}" var = "bdateday"/>
 								<fmt:formatDate pattern="dd" value="${now}" var = "nowd"/>
 
 								<c:if test="${bdateday - nowd == 1}">
-
 								<img class="upload" src="<c:url value='/resources/img/new.svg' />" 
 								style="width: 28px; height: 15px;">	</c:if></td>
 						<td class="text-center"><c:out value="${dto.empnm }" /></td>

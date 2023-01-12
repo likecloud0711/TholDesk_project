@@ -33,7 +33,7 @@ public class EmployeeController {
 	@Autowired
 	EmployeeService empService;
 	
-	@GetMapping("/insert")
+	@GetMapping("/emp/insertView")
 	public ModelAndView empInsert() {
 		ModelAndView mav = new ModelAndView();
 		
@@ -46,7 +46,7 @@ public class EmployeeController {
     public ModelAndView create(EmployeeDto empDto){
       ModelAndView mav = new ModelAndView();
     
-      System.out.println(empDto.getEmpnm());
+      System.out.println(empDto.getempnm());
     
       int cnt= empService.empInsert(empDto);
     
@@ -115,6 +115,9 @@ public class EmployeeController {
 	      System.out.println(empno + " 로그인 성공");
 	      EmployeeDto empDto = empService.selectEmp(empno);
 	      session.setAttribute("empno", empDto.getEmpno()); // 서버의 메모리에 기록
+	      session.setAttribute("empnm", empDto.getempnm());
+	      session.setAttribute("adminyn", empDto.getadminyn());
+	      session.setAttribute("grade", empDto.getGrade());
 	      
 	      // id 관련 쿠기 저장
 	      if (id_save.equals("Y")) { // id를 저장할 경우, Checkbox를 체크한 경우
@@ -168,11 +171,18 @@ public class EmployeeController {
 		return mav;
 	}
 	
-	@GetMapping("/updateView")
-	public ModelAndView updateView(int empno) {
+	@GetMapping("/emp/updateView")
+	public ModelAndView updateView(HttpSession session, int empno) {
 		ModelAndView mav = new ModelAndView();
 		
 		EmployeeDto empDto = empService.selectEmp(empno);
+		int empno1 = empDto.getEmpno();
+		int empno2 = (int) session.getAttribute("empno");
+		if(empno1 == empno2) {
+			String me = "Y";
+			mav.addObject("me", me);
+			System.out.println("me ->" +  me);
+		}
 		mav.addObject("empDto", empDto);
 		mav.setViewName("/employee/updateView");
 				
@@ -206,12 +216,15 @@ public class EmployeeController {
 		
 	}
 	
-	@GetMapping("/orgChart")
+	@GetMapping("/emp/orgChart")
 	public ModelAndView orgChart() {
 		ModelAndView mav = new ModelAndView();
+		List<EmployeeDto> list = empService.selectAllEmp();
 		
+		mav.addObject("list", list);
 		mav.setViewName("/employee/orgchart");
 		
 		return mav;
 	}
 }
+

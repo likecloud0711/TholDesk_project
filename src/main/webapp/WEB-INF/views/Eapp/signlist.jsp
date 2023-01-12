@@ -1,3 +1,4 @@
+
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
@@ -68,11 +69,11 @@ td{border: 1px solid black;
 				<td>재택근무신청서</td>
 				</c:if>
 				<td><a href="signcontent/${sl.opno}">${sl.optitle }</a></td>
-				<td>${sl.empnm }<c:if test="${dto.grade  == 100}">사장</c:if>
-						<c:if test="${dto.grade  == 20}">부장</c:if>
-						<c:if test="${dto.grade  == 30}">과장</c:if>
-						<c:if test="${dto.grade  == 40}">대리</c:if>
-						<c:if test="${dto.grade  == 50}">사원</c:if></td>
+				<td>${sl.empnm }<c:if test="${sl.grade  == 100}">사장</c:if>
+						<c:if test="${sl.grade  == 20}">부장</c:if>
+						<c:if test="${sl.grade  == 30}">과장</c:if>
+						<c:if test="${sl.grade  == 40}">대리</c:if>
+						<c:if test="${sl.grade  == 50}">사원</c:if></td>
 				<td>${sl.teamnm }</td>
 				<td>${sl.draftdt }</td>
 			</tr>
