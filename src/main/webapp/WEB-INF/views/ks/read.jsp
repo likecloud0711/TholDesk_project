@@ -8,9 +8,9 @@ pageEncoding="UTF-8"%>
 function deleteConfirm(){
 
 if(!confirm("삭제 하시겠습니까?")){
-	return false;
+   return false;
 }else{
-	location.href="/ks/delete?no="+${dto.boardno};
+   location.href="/ks/delete?no="+${dto.boardno};
 }
 }
 
@@ -33,35 +33,35 @@ if(!confirm("삭제 하시겠습니까?")){
 <form action="/ks/read" method="post">
 <div class="table-responsive" style="text-align:center;">
 <table id="datatable-scroller"
-	class="table table-bordered tbl_Form">
-	<colgroup>
-		<col width="15%"/>
-		<col width="35%"/>
-		<col width="15%"/>
-		<col width="*"/>
-	</colgroup>
-	<tbody>
-		<tr>
-			<th class="active">작성자</th>
-			<td style="color:#212121;">${dto.empnm}(${dto.empno})</td>
-			<th class="active">작성일</th>
-			<td style="color:#212121;">${dto.boarddate}</td>
-		</tr>
-		<tr>
-			<th class="active">제목</th> <!-- 현재 액티브한 부분을 보여줌 -->
-			<td style="color:#212121;">${dto.boardtitle}</td>
-			<th class="active">조회수</th>
-			<td style="color:#212121;">${dto.readcount}</td>
-		</tr>
-		<tr>
-			<th class="active">내용</th>
-			<td colspan="3" style="color:#212121;">${dto.boardcontents}</td>
-		</tr>
-		<tr>
-			<th class="active">첨부파일</th>
-			<td colspan="3"><a href="/download/${dto.boardno}">${dto.originalname}</a></td>
-		</tr>
-	</tbody>
+   class="table table-bordered tbl_Form">
+   <colgroup>
+      <col width="15%"/>
+      <col width="35%"/>
+      <col width="15%"/>
+      <col width="*"/>
+   </colgroup>
+   <tbody>
+      <tr>
+         <th class="active">작성자</th>
+         <td style="color:#212121;">${dto.empnm}(${dto.empno})</td>
+         <th class="active">작성일</th>
+         <td style="color:#212121;">${dto.boarddate}</td>
+      </tr>
+      <tr>
+         <th class="active">제목</th> <!-- 현재 액티브한 부분을 보여줌 -->
+         <td style="color:#212121;">${dto.boardtitle}</td>
+         <th class="active">조회수</th>
+         <td style="color:#212121;">${dto.readcount}</td>
+      </tr>
+      <tr>
+         <th class="active">내용</th>
+         <td colspan="3" style="color:#212121;">${dto.boardcontents}</td>
+      </tr>
+      <tr>
+         <th class="active">첨부파일</th>
+         <td colspan="3"><a href="/download/${dto.boardno}">${dto.originalname}</a></td>
+      </tr>
+   </tbody>
 </table>
 </div>
 </form>

@@ -153,7 +153,7 @@ public class EmployeeController {
 	      response.addCookie(ck_passwd_save);
 	      // -------------------------------------------------------------------
 	      
-	      mav.setViewName("redirect:/hello");  
+	      mav.setViewName("redirect:/main");  
 	    }
 		return mav;
 	}
