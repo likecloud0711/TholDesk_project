@@ -47,8 +47,10 @@ pageEncoding="UTF-8"%> <!-- jsp 에는 이 차셋을 써야함. -->
             </a>
 
             <!-- Nav Item - Dashboard -->
+
             <li class="nav-item">
                 <a class="nav-link text-center" href="/main">
+
                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-house-door-fill" viewBox="0 0 16 16">
                    <path d="M6.5 14.5v-3.505c0-.245.25-.495.5-.495h2c.25 0 .5.25.5.5v3.5a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.146-.354L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.354 1.146a.5.5 0 0 0-.708 0l-6 6A.5.5 0 0 0 1.5 7.5v7a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5z"/>
                </svg></a>
@@ -98,10 +100,7 @@ pageEncoding="UTF-8"%> <!-- jsp 에는 이 차셋을 써야함. -->
                         <a class="collapse-item" href="/ks/board">공지사항</a>
                         <a class="collapse-item" href="/ks/teamboard">부서게시판</a>
                         <a class="collapse-item" href="/ks/freeboard">자유게시판</a>
-                        <div class="collapse-divider"></div>
-                        <h6 class="collapse-header">Other Pages:</h6>
-                        <a class="collapse-item" href="404.html">404 Page</a>
-                        <a class="collapse-item" href="blank.html">Blank Page</a>
+ 
                     </div>
                 </div>
                 <hr class="sidebar-divider">
@@ -229,5 +228,6 @@ pageEncoding="UTF-8"%> <!-- jsp 에는 이 차셋을 써야함. -->
                             </div>
                         </li>
                     </ul>
+
  -->
- 
+
