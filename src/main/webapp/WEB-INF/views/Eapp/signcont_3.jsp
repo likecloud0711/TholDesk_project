@@ -71,7 +71,7 @@
 </c:if>
 <input type="button" id="signdone2" value="승인">
 <input type="button" onclick="location.href='/Eapp/rejectcont/${dto.opno}'" id="returnsign2" value="반려">
-<button type="button" onclick="location.href='../eapproval'">목록</button>
+<button type="button" onclick="location.href='../signlist'">목록</button>
 </form>
 <script src="http://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script>
