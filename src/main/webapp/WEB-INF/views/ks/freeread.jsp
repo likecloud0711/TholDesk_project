@@ -23,7 +23,7 @@ if(!confirm("삭제 하시겠습니까?")){
 <div class="row" style="margin-bottom:20px; margin-left:1px; margin-top:20px;">
 <div class="col-lg-12">
 <h1 class="page-header mb-2 font-weight-bold text-gray-800" style="color:#212121;">상세 페이지</h1>
-<h4 class="mb-2 font-weight-bold text-gray-800"style="color:#212121;">(자유게시판)</h4>
+<h4 class="mb-2 font-weight-bold text-gray-800"style="color:#212121;">(freeboard)</h4>
 </div>
 </div>
 <div class="container-fluid">
