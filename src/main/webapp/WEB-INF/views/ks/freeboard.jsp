@@ -1,7 +1,8 @@
+
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
-<%@ include file="../includes/header.jsp"%>
+<%@include file="../includes/header.jsp"%>
 
 <head>
 <title>title</title>
@@ -29,7 +30,7 @@
 			<div class="card-header py-3">
 			<form method="get" id="listForm" action="/ks/freesearch">
 				<input type="text" id="freesearch" name="freesearch"
-					value="${dto.freeboardListSearch}" style="width: 300px; height: 40px;"a
+					value="${dto.freeboardListSearch}" style="width: 300px; height: 40px;"
 					placeholder="검색어를 입력하세요." /> <input type="submit" class="btn btn-primary" value="검색">
 			</form>		
 			</div>
@@ -113,3 +114,4 @@
 </div>
 <!-- /.container-fluid -->
 <%@include file="../includes/footer.jsp"%>
+
